@@ -1,0 +1,41 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "permissions": {
+    "deny": [
+      "Read(//e/professional/Projects/bugsense/**)",
+      "Read(//E/professional/Projects/bugsense/**)",
+      "Edit(//e/professional/Projects/bugsense/**)",
+      "Edit(//E/professional/Projects/bugsense/**)",
+      "Read(//c/Users/User/.claude/projects/e--professional-Projects-bugsense/**)",
+      "Read(//C/Users/User/.claude/projects/e--professional-Projects-bugsense/**)",
+      "Read(//c/Users/User/AppData/Local/Temp/claude/**)",
+      "Read(//C/Users/User/AppData/Local/Temp/claude/**)",
+      "Read(//e/professional/Projects/bugsense-review.zip)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:codeload.github.com)",
+      "WebFetch(domain:objects.githubusercontent.com)",
+      "Bash(gh:*)",
+      "Bash(git clone:*)",
+      "Bash(git -C /e/professional/Projects/bugsense:*)",
+      "Bash(curl http://localhost:8080/sdk:*)",
+      "Bash(curl http://localhost:8090/sdk:*)",
+      "Bash(curl -s http://localhost:8090/sdk:*)",
+      "Bash(docker exec:*)",
+      "Bash(docker cp:*)",
+      "Bash(docker save:*)",
+      "Bash(docker export:*)",
+      "Bash(docker image save:*)",
+      "Bash(docker container export:*)",
+      "Bash(docker compose:*)",
+      "Bash(docker run * fpe-sut*)",
+      "Bash(docker run * bugsense*)",
+      "Bash(docker history:*)",
+      "Bash(docker inspect:*)"
+    ]
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "lockVersion": 1,
+  "corpusVersion": 1,
+  "frozenAt": "2026-10-17T06:12:14.443Z",
+  "note": "Committed before any replay against the system under test. After this commit the corpus does not change; a corpus mistake found later is fixed in a new corpus version.",
+  "fixtureCommits": [
+    "9a4a9a2bac4df556fab32fd3d24cfdd7fd78371d",
+    "a0a436dd201b31b8c21bb61e35422c49870aef2d",
+    "9117df88ee24c9bfd2749b1b410385b9d5c568f2"
+  ],
+  "fixtureCommitPerCapture": {
+    "browser-prod": "9a4a9a2bac4df556fab32fd3d24cfdd7fd78371d",
+    "browser-dev": "a0a436dd201b31b8c21bb61e35422c49870aef2d",
+    "node": "9117df88ee24c9bfd2749b1b410385b9d5c568f2"
+  },
+  "playwright": "1.64.1",
+  "browsers": {
+    "chromium": "156.0.8078.4",
+    "firefox": "157.0",
+    "webkit": "27.2"
+  },
+  "browsersDevRun": {
+    "chromium": "156.0.8078.4",
+    "firefox": "157.0",
+    "webkit": "27.2"
+  },
+  "nodeImages": {
+    "node:22-alpine": {
+      "digest": "sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402",
+      "repoDigests": "node:22-alpine@sha256:0a7108bf6c7bf5de370ffb1a3ed6be93d405b43ff159f681a8d18c0e2bc2e402 0a7108bf6c7b"
+    },
+    "node:24-alpine": {
+      "digest": "sha256:44fce696f38ba8c987c4db89954051000bbd05ffd8d8659ba15ed4a8602e937f",
+      "repoDigests": "node:24-alpine@sha256:44fce696f38ba8c987c4db89954051000bbd05ffd8d8659ba15ed4a8602e937f 44fce696f38b"
+    }
+  },
+  "mockBackendImage": "node:22-alpine (same digest as above)",
+  "sdk": "http://localhost:8090/sdk/bugsense.js, loaded only through the fixture <script> tag; not fetched or read by the builder",
+  "files": {
+    "corpus/capture-log/browser-dev.jsonl": "1f912ce2272a20302f3791add371f5344efa6bcad585397d72affe41d726d4c1",
+    "corpus/capture-log/browser-prod.jsonl": "fa06e0eff85b3375b825f540d5ad49f7be2d662539946f1e6e6636e93f3ab250",
+    "corpus/capture-log/node-node-mapped-v1.jsonl": "bb33c6d708c674482958ac8b9090be5a6983d8d3d03f6a538db66bac3dab0ddb",
+    "corpus/capture-log/node-node-mapped-v2.jsonl": "0d59a7e6b1746c39dcc2699cdb875b28db4b9f848f0bc232e6a1fbb0a838fc8a",
+    "corpus/capture-log/node-node-plain-v1.jsonl": "3407605e608d9139eb31afb36ab097662471c2eb0e2b8e88aa51a2b6947f2a46",
+    "corpus/capture-log/node-node-plain-v2.jsonl": "1be4a62d8dc34c1ca651473fa3bf07ba47ff96b8c0b1191464b13b12056a043b",
+    "corpus/capture-log/superseded/node-interrupted-run.jsonl": "32350fa19449ccee42ef80a7ea9f036271784d2c68fc21dbdc5e9ab9254b8ba5",
+    "corpus/controls.json": "fa0f35c6dbe921e5891e8d51782ba9907a3948e972663a46a39d5a0d9d5630cf",
+    "corpus/dropped.json": "16619cb601f85b22a1222616245bd02ddd371d4e4405fab8b8704b18d53e3ed0",
+    "corpus/incidents.json": "03c533061e8a0866c59d5c5effaa4caf9b2c8b76c15a83ab8b2cf32e228d6d98",
+    "corpus/meta.jsonl": "3e65f81122af08116f0b7bcff51fd37103d8cd71c6538fe6e1d6c84de32ac452",
+    "corpus/node-api-v1-to-v2.diff": "9a9722d28185b4bb9432c4f0bab117d5de03035b8bf2e40ba4439ac08ac5a8f4",
+    "corpus/reports.jsonl": "de4b8cd84e871a29207f3ced21309e56efe9fc8f163b846dc8b354471e412404",
+    "corpus/shopfront-v1-to-v2.diff": "e6e8f13402403fd402c84c63c8b371a2eca068e2c11f1d5394a560c020759cdc",
+    "replay.mjs": "8c780ec7903c150a36da99d10c32f1fcd647bf65bb475c9a17bdab9a0da9308e",
+    "score.mjs": "08b4e12f52ec41188fe20d2558a9e821016e37e6185f972fdab7cc762d45465a"
+  },
+  "supportingFiles": {
+    "harness/build-corpus.mjs": "8ff44c90f48f1ea9e9bd9be0ecf646c66100c3e403eeb2badc33ec3026a58013",
+    "harness/build-fixture.mjs": "d2d63044893fd88441e15b932084f452d5f0a587567dc5911cc1b09bd52822e9",
+    "harness/capture-browser.mjs": "8be26b0407a8907c2785ad5f3ac32bad33a1a43390b96ea2fa286fc45d71e305",
+    "harness/capture-node.mjs": "768e4fce23759deb7ae2e65f9213fbe7f35be2d09862490be6d07a2738b1fff5",
+    "harness/capture-server.mjs": "157cc68e54aca479c736f68cbc60fd63d22c6145e3e1c9bac8a9f194582b572a",
+    "harness/freeze.mjs": "b022277ddfe3bf535af8169df5cf851698136a7d4af96b50eaaecadc31a832f0",
+    "harness/make-v2.mjs": "1410c3c3ab783d7eed42414ba4edc388ccc8babb910f614d76e4d34699479ce0",
+    "harness/node-api.Dockerfile": "1872ec77e657e1d9d8cb86d0af5ad7fe651b1f9fe3e58daaaa448bb0bdcca092",
+    "harness/plan.mjs": "294a5b2d4ad75734ca7db02a7f0b80fd4a1611cbdbe188f7ae689aee627cc881",
+    "harness/probe-api.mjs": "c12f3a5d9318a2817cd1968daf907711ee283eda9a1a9f09be21deb8670de90e",
+    "harness/services-cli.mjs": "63adcbf5db8c89a9bf172aff75fa5032e76664bfc5acd040c1e9fe5b03cce9b9",
+    "harness/services.mjs": "528bdc92356ceba7301eed70a9e13c43e5f0382dbc93629bb233e2f0251ecb92",
+    "harness/trigger.mjs": "c82ea4c626a735e29443764f6bfccbcf82a603114b449895d1e8bd033a9f5fc4",
+    "harness/verify-lock.mjs": "bd15fe1495718a84bbe2308818a203bf17e8d36c4db41eabbf988a42180e6ce8",
+    "test/score-synthetic.mjs": "f438fb710f7cca18a26bacf39a111c6e84230ad24c723f8e214235f284c12750",
+    "fixture/shopfront.v2.patch": "e6e8f13402403fd402c84c63c8b371a2eca068e2c11f1d5394a560c020759cdc",
+    "fixture/node-api.v2.patch": "9a9722d28185b4bb9432c4f0bab117d5de03035b8bf2e40ba4439ac08ac5a8f4",
+    "CATEGORIES.md": "893c3e3a4fff68923455373ccb282518434d6d19f51b7019d7be13d5983916a0",
+    "builder-categories.md": "41e14d8ad98ac083f5c24bfec95d28845f6c143b2dd98cd1ac907a573ffacedd",
+    "DESIGN.md": "58ac6ed4394822167cd005017d09e806c11f7f5874c048d3f81b6548e16ee7fb"
+  },
+  "totals": {
+    "reports": 748,
+    "plannedReports": 778,
+    "perEnvironment": {
+      "browser-prod": {
+        "planned": 355,
+        "reports": 349,
+        "incidents": 57,
+        "pairs": 60726,
+        "sameIncidentPairs": 906,
+        "versionOnlyPairs": 168,
+        "browserOnlyPairs": 330,
+        "isolatedDataVariantPairs": 10,
+        "isolatedCallPathPairs": 3
+      },
+      "browser-dev": {
+        "planned": 355,
+        "reports": 331,
+        "incidents": 54,
+        "pairs": 54615,
+        "sameIncidentPairs": 861,
+        "versionOnlyPairs": 159,
+        "browserOnlyPairs": 312,
+        "isolatedDataVariantPairs": 10,
+        "isolatedCallPathPairs": 3
+      },
+      "node-plain": {
+        "planned": 34,
+        "reports": 34,
+        "incidents": 8,
+        "pairs": 561,
+        "sameIncidentPairs": 56,
+        "versionOnlyPairs": 16,
+        "nodeVersionOnlyPairs": 16,
+        "isolatedDataVariantPairs": 1,
+        "isolatedCallPathPairs": 1
+      },
+      "node-mapped": {
+        "planned": 34,
+        "reports": 34,
+        "incidents": 8,
+        "pairs": 561,
+        "sameIncidentPairs": 56,
+        "versionOnlyPairs": 16,
+        "nodeVersionOnlyPairs": 16,
+        "isolatedDataVariantPairs": 1,
+        "isolatedCallPathPairs": 1
+      }
+    },
+    "headline": {
+      "reports": 680,
+      "pairs": 115341,
+      "sameIncidentPairs": 1767
+    },
+    "crossEnvironment": {
+      "pairs": 115519,
+      "sameIncidentPairs": 2053
+    },
+    "nodeCross": {
+      "pairs": 1156,
+      "sameIncidentPairs": 146
+    },
+    "nodeBrowserPairs": 46240,
+    "missing": 30,
+    "missingPercent": 3.86
+  },
+  "hardNegativePairs": [
+    {
+      "a": "A3",
+      "b": "A4",
+      "origin": "D"
+    },
+    {
+      "a": "A8a",
+      "b": "A8b",
+      "origin": "D"
+    },
+    {
+      "a": "B2",
+      "b": "B3",
+      "origin": "D"
+    },
+    {
+      "a": "C1",
+      "b": "C2",
+      "origin": "D"
+    },
+    {
+      "a": "C4",
+      "b": "C5",
+      "origin": "D"
+    },
+    {
+      "a": "D2",
+      "b": "D3",
+      "origin": "D"
+    },
+    {
+      "a": "E1",
+      "b": "E2",
+      "origin": "D"
+    },
+    {
+      "a": "G6",
+      "b": "G7",
+      "origin": "B"
+    },
+    {
+      "a": "G16",
+      "b": "G17",
+      "origin": "B"
+    },
+    {
+      "a": "G19",
+      "b": "G20",
+      "origin": "B"
+    },
+    {
+      "a": "G21",
+      "b": "G22",
+      "origin": "B"
+    },
+    {
+      "a": "G24",
+      "b": "G25",
+      "origin": "B"
+    },
+    {
+      "a": "G26",
+      "b": "G27",
+      "origin": "B"
+    },
+    {
+      "a": "G28",
+      "b": "G29",
+      "origin": "B"
+    },
+    {
+      "a": "A5",
+      "b": "G30",
+      "origin": "B"
+    }
+  ],
+  "nodeHardNegativePairs": [
+    {
+      "a": "F1",
+      "b": "F4",
+      "origin": "D"
+    },
+    {
+      "a": "F6",
+      "b": "F7",
+      "origin": "D"
+    }
+  ],
+  "controls": {
+    "seed": 20261017,
+    "method": "mulberry32(seed); repeat 10 times: remove pool[floor(rand() * pool.length)], where pool is the browser report ids in id order",
+    "ids": [
+      "R0119",
+      "R0265",
+      "R0024",
+      "R0421",
+      "R0251",
+      "R0343",
+      "R0009",
+      "R0292",
+      "R0041",
+      "R0022"
+    ]
+  },
+  "dropped": [
+    "browser-prod v1 chromium C4/standard (reports per attempt: 0, 0, 0, 0)",
+    "browser-prod v1 chromium C5/standard (reports per attempt: 0, 0, 0, 0)",
+    "browser-prod v1 chromium C6/standard (reports per attempt: 0, 0, 0, 0)",
+    "browser-prod v2 chromium C4/standard (reports per attempt: 0, 0, 0, 0)",
+    "browser-prod v2 chromium C5/standard (reports per attempt: 0, 0, 0, 0)",
+    "browser-prod v2 chromium C6/standard (reports per attempt: 0, 0, 0, 0)",
+    "browser-dev v1 chromium B1/standard (reports per attempt: 2, 2, 2, 2)",
+    "browser-dev v1 chromium B2/standard (reports per attempt: 2, 2, 2, 2)",
+    "browser-dev v1 chromium B3/standard (reports per attempt: 2, 2, 2, 2)",
+    "browser-dev v1 chromium C4/standard (reports per attempt: 0, 0, 0, 0)",
+    "browser-dev v1 chromium C5/standard (reports per attempt: 0, 0, 0, 0)",
+    "browser-dev v1 chromium C6/standard (reports per attempt: 0, 0, 0, 0)",
+    "browser-dev v1 firefox B1/standard (reports per attempt: 2, 2, 2, 2)",
+    "browser-dev v1 firefox B2/standard (reports per attempt: 2, 2, 2, 2)",
+    "browser-dev v1 firefox B3/standard (reports per attempt: 2, 2, 2, 2)",
+    "browser-dev v1 webkit B1/standard (reports per attempt: 2, 2, 2, 2)",
+    "browser-dev v1 webkit B2/standard (reports per attempt: 2, 2, 2, 2)",
+    "browser-dev v1 webkit B3/standard (reports per attempt: 2, 2, 2, 2)",
+    "browser-dev v2 chromium B1/standard (reports per attempt: 2, 2, 2, 2)",
+    "browser-dev v2 chromium B2/standard (reports per attempt: 2, 2, 2, 2)",
+    "browser-dev v2 chromium B3/standard (reports per attempt: 2, 2, 2, 2)",
+    "browser-dev v2 chromium C4/standard (reports per attempt: 0, 0, 0, 0)",
+    "browser-dev v2 chromium C5/standard (reports per attempt: 0, 0, 0, 0)",
+    "browser-dev v2 chromium C6/standard (reports per attempt: 0, 0, 0, 0)",
+    "browser-dev v2 firefox B1/standard (reports per attempt: 2, 2, 2, 2)",
+    "browser-dev v2 firefox B2/standard (reports per attempt: 2, 2, 2, 2)",
+    "browser-dev v2 firefox B3/standard (reports per attempt: 2, 2, 2, 2)",
+    "browser-dev v2 webkit B1/standard (reports per attempt: 2, 2, 2, 2)",
+    "browser-dev v2 webkit B2/standard (reports per attempt: 2, 2, 2, 2)",
+    "browser-dev v2 webkit B3/standard (reports per attempt: 2, 2, 2, 2)"
+  ]
+}

@@ -1,0 +1,936 @@
+{
+  "note": "Ground truth: two reports are the same incident iff the same trigger fired them. Generated from harness/plan.mjs.",
+  "messageField": "title",
+  "stackField": "errorLog",
+  "browserEnvironments": [
+    "browser-prod",
+    "browser-dev"
+  ],
+  "nodeEnvironments": [
+    "node-plain",
+    "node-mapped"
+  ],
+  "incidents": [
+    {
+      "id": "A1",
+      "kind": "browser",
+      "origin": [
+        "U",
+        "B"
+      ],
+      "defect": "Click handler reads a property of undefined (coupon on an empty cart)",
+      "hard": "baseline",
+      "variant": null
+    },
+    {
+      "id": "A2",
+      "kind": "browser",
+      "origin": [
+        "D",
+        "B"
+      ],
+      "defect": "ReferenceError inside a lazy-loaded chunk",
+      "hard": "the chunk file name changes per build",
+      "variant": null
+    },
+    {
+      "id": "A3",
+      "kind": "browser",
+      "origin": [
+        "D",
+        "B"
+      ],
+      "defect": "Cart reducer throws new Error('Invalid cart state')",
+      "hard": "same message as A4",
+      "variant": null
+    },
+    {
+      "id": "A4",
+      "kind": "browser",
+      "origin": [
+        "D",
+        "B"
+      ],
+      "defect": "Checkout validator throws the same message",
+      "hard": "hard negative with A3: same message, different site",
+      "variant": null
+    },
+    {
+      "id": "A5",
+      "kind": "browser",
+      "origin": [
+        "D",
+        "B"
+      ],
+      "defect": "Unbounded recursion in the category tree",
+      "hard": "engine-specific recursion messages, long repetitive stacks",
+      "variant": null
+    },
+    {
+      "id": "A6",
+      "kind": "browser",
+      "origin": [
+        "D",
+        "B"
+      ],
+      "defect": "JSON.parse of a corrupt localStorage value",
+      "hard": "message embeds the bad value; wording differs per engine",
+      "variant": "data"
+    },
+    {
+      "id": "A7",
+      "kind": "browser",
+      "origin": [
+        "D",
+        "B"
+      ],
+      "defect": "throw new Error(`Product ${id} not found`)",
+      "hard": "ID in the message",
+      "variant": "data"
+    },
+    {
+      "id": "A8a",
+      "kind": "browser",
+      "origin": [
+        "U",
+        "B"
+      ],
+      "defect": "formatPrice(undefined) from ProductCard (draft products have no price)",
+      "hard": "hard negative with A8b",
+      "variant": null
+    },
+    {
+      "id": "A8b",
+      "kind": "browser",
+      "origin": [
+        "U",
+        "B"
+      ],
+      "defect": "formatPrice(undefined) from WishlistRow (stale cache shape)",
+      "hard": "identical message and top frame as A8a",
+      "variant": null
+    },
+    {
+      "id": "A9",
+      "kind": "browser",
+      "origin": [
+        "D",
+        "B"
+      ],
+      "defect": "slugify mishandles emoji, reached from ProductPage or SearchResults",
+      "hard": "same bug, different frames below the top",
+      "variant": "callpath"
+    },
+    {
+      "id": "B1",
+      "kind": "browser",
+      "origin": [
+        "U"
+      ],
+      "defect": "Render TypeError in ProductReviews, caught by an error boundary",
+      "hard": "React component stack via captureError",
+      "variant": null
+    },
+    {
+      "id": "B2",
+      "kind": "browser",
+      "origin": [
+        "U",
+        "D",
+        "B"
+      ],
+      "defect": "\"Objects are not valid as a React child\" in OrderHistory (boundary)",
+      "hard": "production React error #31 with decoder URL and args",
+      "variant": null
+    },
+    {
+      "id": "B3",
+      "kind": "browser",
+      "origin": [
+        "U",
+        "D",
+        "B"
+      ],
+      "defect": "The same invariant in ProfileBadge (boundary)",
+      "hard": "hard negative with B2: top frames inside react-dom",
+      "variant": null
+    },
+    {
+      "id": "B4",
+      "kind": "browser",
+      "origin": [
+        "U",
+        "D",
+        "B"
+      ],
+      "defect": "Conditional hook (\"Rendered more hooks\") in Filters, no boundary",
+      "hard": "React error via the uncaught-error path",
+      "variant": null
+    },
+    {
+      "id": "C1",
+      "kind": "browser",
+      "origin": [
+        "U",
+        "B"
+      ],
+      "defect": "axios POST /api/orders -> 500",
+      "hard": "top frames are axios internals",
+      "variant": null
+    },
+    {
+      "id": "C2",
+      "kind": "browser",
+      "origin": [
+        "U",
+        "B"
+      ],
+      "defect": "axios GET /api/recommendations -> 500 from a different component",
+      "hard": "hard negative with C1",
+      "variant": null
+    },
+    {
+      "id": "C3",
+      "kind": "browser",
+      "origin": [
+        "U",
+        "D",
+        "B"
+      ],
+      "defect": "axios GET /api/products/:id -> 404 for deleted products",
+      "hard": "different IDs in the route",
+      "variant": "data"
+    },
+    {
+      "id": "C4",
+      "kind": "browser",
+      "origin": [
+        "U",
+        "D",
+        "B"
+      ],
+      "defect": "fetch to the analytics endpoint fails at the network level",
+      "hard": "engine-specific network error messages",
+      "variant": null
+    },
+    {
+      "id": "C5",
+      "kind": "browser",
+      "origin": [
+        "U",
+        "D",
+        "B"
+      ],
+      "defect": "fetch to the image-upload endpoint fails the same way",
+      "hard": "hard negative with C4",
+      "variant": null
+    },
+    {
+      "id": "C6",
+      "kind": "browser",
+      "origin": [
+        "D",
+        "B"
+      ],
+      "defect": "res.json() on an HTML error page",
+      "hard": "messages differ completely per engine",
+      "variant": null
+    },
+    {
+      "id": "D1",
+      "kind": "browser",
+      "origin": [
+        "U",
+        "B"
+      ],
+      "defect": "Unhandled rejection: Error thrown inside async loadCart",
+      "hard": "async frames",
+      "variant": null
+    },
+    {
+      "id": "D2",
+      "kind": "browser",
+      "origin": [
+        "D",
+        "B"
+      ],
+      "defect": "Unhandled rejection with the string reason 'timeout'",
+      "hard": "no stack",
+      "variant": null
+    },
+    {
+      "id": "D3",
+      "kind": "browser",
+      "origin": [
+        "D",
+        "B"
+      ],
+      "defect": "Unhandled rejection with the string reason 'quota exceeded' elsewhere",
+      "hard": "hard negative with D2",
+      "variant": null
+    },
+    {
+      "id": "D4",
+      "kind": "browser",
+      "origin": [
+        "D",
+        "B"
+      ],
+      "defect": "Unhandled rejection with a plain object reason { code: 'E_AUTH' }",
+      "hard": "not an Error at all",
+      "variant": null
+    },
+    {
+      "id": "D5",
+      "kind": "browser",
+      "origin": [
+        "D",
+        "B"
+      ],
+      "defect": "Error thrown in a setTimeout callback",
+      "hard": "short stack cut at the timer boundary",
+      "variant": null
+    },
+    {
+      "id": "E1",
+      "kind": "browser",
+      "origin": [
+        "D",
+        "B"
+      ],
+      "defect": "Error in a cross-origin script served without CORS",
+      "hard": "Script error., no stack",
+      "variant": null
+    },
+    {
+      "id": "E2",
+      "kind": "browser",
+      "origin": [
+        "D",
+        "B"
+      ],
+      "defect": "A different error in another cross-origin script",
+      "hard": "hard negative with E1; likely byte-identical",
+      "variant": null
+    },
+    {
+      "id": "G1",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "Order-limit check compares cents with euros; message embeds a locale-formatted total",
+      "hard": "locale changes the formatted value in the message",
+      "variant": "data"
+    },
+    {
+      "id": "G2",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "Cached shipping quote has no shipping block; quote.shipping.zone",
+      "hard": "value is sometimes undefined, sometimes null",
+      "variant": "data"
+    },
+    {
+      "id": "G3",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "Fallback tracker stub lacks trackPurchase(): \"x is not a function\"",
+      "hard": "message embeds a local variable name the minifier renames",
+      "variant": null
+    },
+    {
+      "id": "G4",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "Shared describeItem() assumes a meta block; installed on Product and Bundle",
+      "hard": "receiver type changes the frame name",
+      "variant": "callpath"
+    },
+    {
+      "id": "G5",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "parseGiftCard does not trim or upper-case codes",
+      "hard": "same defect reached synchronously (uncaught) or from an async function (unhandled rejection)",
+      "variant": "callpath"
+    },
+    {
+      "id": "G6",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "normalizeAddress reads form.country.code; wrapped by withRetry",
+      "hard": "hard negative with G7: shared wrapper rethrows 'Operation failed after retries' with a cause",
+      "variant": null
+    },
+    {
+      "id": "G7",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "taxRate() undefined for unconfigured regions; wrapped by withRetry",
+      "hard": "hard negative with G6",
+      "variant": null
+    },
+    {
+      "id": "G8",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "flattenThread reads author.name of a deleted comment",
+      "hard": "recursion depth changes which frames survive stack truncation",
+      "variant": "data"
+    },
+    {
+      "id": "G9",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "Inventory response shape changed; whole payload embedded in the message",
+      "hard": "very long, data-dependent message length",
+      "variant": "data"
+    },
+    {
+      "id": "G10",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "Legacy inline <script> in index.html reads a removed config block",
+      "hard": "inline-script frames carry the page URL, which embeds the product id",
+      "variant": "data"
+    },
+    {
+      "id": "G11",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "CMS promotion rule compiled with new Function assumes a signed-in customer",
+      "hard": "eval/Function frames",
+      "variant": null
+    },
+    {
+      "id": "G12",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "Pricing plugin loaded from a blob: URL mishandles lines without a discount",
+      "hard": "blob: URL with a random UUID per page load",
+      "variant": null
+    },
+    {
+      "id": "G13",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "Dynamic import of a missing locale bundle, no fallback",
+      "hard": "module URL in the message; per-engine wording",
+      "variant": "data"
+    },
+    {
+      "id": "G14",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "Parent passes the card number as a number to a same-origin iframe function that throws TypeError",
+      "hard": "error object from another realm",
+      "variant": null
+    },
+    {
+      "id": "G15",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "Wishlist sync rejects items without sku; retry layer appends the attempt count to the message",
+      "hard": "message mutated after creation",
+      "variant": "data"
+    },
+    {
+      "id": "G16",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "recalculateSummary throws new Error() with no message",
+      "hard": "hard negative with G17: empty messages",
+      "variant": null
+    },
+    {
+      "id": "G17",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "submitAddressForm throws new Error() with no message",
+      "hard": "hard negative with G16",
+      "variant": null
+    },
+    {
+      "id": "G18",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "Quantity picker throws the bare string 'Invalid quantity' synchronously",
+      "hard": "non-Error thrown through the uncaught path",
+      "variant": null
+    },
+    {
+      "id": "G19",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "buildShippingLabel: guest orders have no billing address",
+      "hard": "hard negative with G20: same function, same V8 message, different line",
+      "variant": null
+    },
+    {
+      "id": "G20",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "buildShippingLabel: pickup orders have no shipping address",
+      "hard": "hard negative with G19",
+      "variant": null
+    },
+    {
+      "id": "G21",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "startCheckout throws a shared, pre-constructed PAYMENTS_NOT_READY error",
+      "hard": "hard negative with G22: stack captured at module load, identical",
+      "variant": null
+    },
+    {
+      "id": "G22",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "savePaymentMethod throws the same pre-constructed error",
+      "hard": "hard negative with G21",
+      "variant": null
+    },
+    {
+      "id": "G23",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "Banner resizes itself inside its ResizeObserver callback",
+      "hard": "browser-generated error with no error object",
+      "variant": null
+    },
+    {
+      "id": "G24",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "WebAssembly apply_discount traps (unreachable)",
+      "hard": "hard negative with G25: wasm traps, numbered frames",
+      "variant": null
+    },
+    {
+      "id": "G25",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "WebAssembly compute_tax traps (unreachable)",
+      "hard": "hard negative with G24",
+      "variant": null
+    },
+    {
+      "id": "G26",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "normalizePhone(undefined) in checkout/phone.js",
+      "hard": "hard negative with G27: copy-pasted function, same name and message",
+      "variant": null
+    },
+    {
+      "id": "G27",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "normalizePhone(undefined) in account/phone.js (copy)",
+      "hard": "hard negative with G26",
+      "variant": null
+    },
+    {
+      "id": "G28",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "Cart page reserves inventory before the cart loads (empty list); server stack embedded in the message",
+      "hard": "hard negative with G29: multi-line message with stack-like server frames, shared helper",
+      "variant": null
+    },
+    {
+      "id": "G29",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "Checkout in-stock filter inverted (empty list); same server failure",
+      "hard": "hard negative with G28",
+      "variant": null
+    },
+    {
+      "id": "G30",
+      "kind": "browser",
+      "origin": [
+        "B"
+      ],
+      "defect": "deepClone recurses forever on a back-reference",
+      "hard": "hard negative with A5: both stack overflows",
+      "variant": null
+    },
+    {
+      "id": "F1",
+      "kind": "node",
+      "origin": [
+        "U"
+      ],
+      "defect": "POST /orders reads req.body.customer.id with no customer",
+      "hard": "sync throw through Express router frames",
+      "variant": null
+    },
+    {
+      "id": "F2",
+      "kind": "node",
+      "origin": [
+        "U"
+      ],
+      "defect": "Async route handler rejects; Express 4 doesn't catch it",
+      "hard": "process-level unhandledRejection",
+      "variant": null
+    },
+    {
+      "id": "F3",
+      "kind": "node",
+      "origin": [
+        "U",
+        "D"
+      ],
+      "defect": "Mongoose CastError for an invalid ObjectId",
+      "hard": "message embeds the bad value",
+      "variant": "data"
+    },
+    {
+      "id": "F4",
+      "kind": "node",
+      "origin": [
+        "U"
+      ],
+      "defect": "Auth middleware reads req.user.id with no user",
+      "hard": "hard negative with F1: same message",
+      "variant": null
+    },
+    {
+      "id": "F5",
+      "kind": "node",
+      "origin": [
+        "U"
+      ],
+      "defect": "axios to the payment provider -> 502",
+      "hard": "top frames are axios's Node adapter",
+      "variant": null
+    },
+    {
+      "id": "F6",
+      "kind": "node",
+      "origin": [
+        "U",
+        "D"
+      ],
+      "defect": "Node fetch to the inventory service -> fetch failed (ECONNREFUSED)",
+      "hard": "undici internal frames shift with the Node version",
+      "variant": null
+    },
+    {
+      "id": "F7",
+      "kind": "node",
+      "origin": [
+        "U",
+        "D"
+      ],
+      "defect": "Node fetch to the email service -> fetch failed",
+      "hard": "hard negative with F6",
+      "variant": null
+    },
+    {
+      "id": "F8",
+      "kind": "node",
+      "origin": [
+        "U",
+        "D"
+      ],
+      "defect": "parseMoney itself is wrong, reached from two routes",
+      "hard": "call-path variant",
+      "variant": "callpath"
+    }
+  ],
+  "hardNegativePairs": [
+    {
+      "a": "A3",
+      "b": "A4",
+      "origin": "D"
+    },
+    {
+      "a": "A8a",
+      "b": "A8b",
+      "origin": "D"
+    },
+    {
+      "a": "B2",
+      "b": "B3",
+      "origin": "D"
+    },
+    {
+      "a": "C1",
+      "b": "C2",
+      "origin": "D"
+    },
+    {
+      "a": "C4",
+      "b": "C5",
+      "origin": "D"
+    },
+    {
+      "a": "D2",
+      "b": "D3",
+      "origin": "D"
+    },
+    {
+      "a": "E1",
+      "b": "E2",
+      "origin": "D"
+    },
+    {
+      "a": "G6",
+      "b": "G7",
+      "origin": "B"
+    },
+    {
+      "a": "G16",
+      "b": "G17",
+      "origin": "B"
+    },
+    {
+      "a": "G19",
+      "b": "G20",
+      "origin": "B"
+    },
+    {
+      "a": "G21",
+      "b": "G22",
+      "origin": "B"
+    },
+    {
+      "a": "G24",
+      "b": "G25",
+      "origin": "B"
+    },
+    {
+      "a": "G26",
+      "b": "G27",
+      "origin": "B"
+    },
+    {
+      "a": "G28",
+      "b": "G29",
+      "origin": "B"
+    },
+    {
+      "a": "A5",
+      "b": "G30",
+      "origin": "B"
+    }
+  ],
+  "nodeHardNegativePairs": [
+    {
+      "a": "F1",
+      "b": "F4",
+      "origin": "D"
+    },
+    {
+      "a": "F6",
+      "b": "F7",
+      "origin": "D"
+    }
+  ],
+  "planned": {
+    "browser-prod": 355,
+    "browser-dev": 355,
+    "node-plain": 34,
+    "node-mapped": 34
+  },
+  "plannedPerIncident": {
+    "browser-prod": {
+      "A1": 6,
+      "A2": 6,
+      "A3": 6,
+      "A4": 6,
+      "A5": 6,
+      "A6": 7,
+      "A7": 7,
+      "A8a": 6,
+      "A8b": 6,
+      "A9": 7,
+      "B1": 6,
+      "B2": 6,
+      "B3": 6,
+      "B4": 6,
+      "C1": 6,
+      "C2": 6,
+      "C3": 7,
+      "C4": 6,
+      "C5": 6,
+      "C6": 6,
+      "D1": 6,
+      "D2": 6,
+      "D3": 6,
+      "D4": 6,
+      "D5": 6,
+      "E1": 6,
+      "E2": 6,
+      "G1": 7,
+      "G2": 7,
+      "G3": 6,
+      "G4": 7,
+      "G5": 7,
+      "G6": 6,
+      "G7": 6,
+      "G8": 7,
+      "G9": 7,
+      "G10": 7,
+      "G11": 6,
+      "G12": 6,
+      "G13": 7,
+      "G14": 6,
+      "G15": 7,
+      "G16": 6,
+      "G17": 6,
+      "G18": 6,
+      "G19": 6,
+      "G20": 6,
+      "G21": 6,
+      "G22": 6,
+      "G23": 6,
+      "G24": 6,
+      "G25": 6,
+      "G26": 6,
+      "G27": 6,
+      "G28": 6,
+      "G29": 6,
+      "G30": 6
+    },
+    "browser-dev": {
+      "A1": 6,
+      "A2": 6,
+      "A3": 6,
+      "A4": 6,
+      "A5": 6,
+      "A6": 7,
+      "A7": 7,
+      "A8a": 6,
+      "A8b": 6,
+      "A9": 7,
+      "B1": 6,
+      "B2": 6,
+      "B3": 6,
+      "B4": 6,
+      "C1": 6,
+      "C2": 6,
+      "C3": 7,
+      "C4": 6,
+      "C5": 6,
+      "C6": 6,
+      "D1": 6,
+      "D2": 6,
+      "D3": 6,
+      "D4": 6,
+      "D5": 6,
+      "E1": 6,
+      "E2": 6,
+      "G1": 7,
+      "G2": 7,
+      "G3": 6,
+      "G4": 7,
+      "G5": 7,
+      "G6": 6,
+      "G7": 6,
+      "G8": 7,
+      "G9": 7,
+      "G10": 7,
+      "G11": 6,
+      "G12": 6,
+      "G13": 7,
+      "G14": 6,
+      "G15": 7,
+      "G16": 6,
+      "G17": 6,
+      "G18": 6,
+      "G19": 6,
+      "G20": 6,
+      "G21": 6,
+      "G22": 6,
+      "G23": 6,
+      "G24": 6,
+      "G25": 6,
+      "G26": 6,
+      "G27": 6,
+      "G28": 6,
+      "G29": 6,
+      "G30": 6
+    },
+    "node-plain": {
+      "F1": 4,
+      "F2": 4,
+      "F3": 5,
+      "F4": 4,
+      "F5": 4,
+      "F6": 4,
+      "F7": 4,
+      "F8": 5
+    },
+    "node-mapped": {
+      "F1": 4,
+      "F2": 4,
+      "F3": 5,
+      "F4": 4,
+      "F5": 4,
+      "F6": 4,
+      "F7": 4,
+      "F8": 5
+    }
+  }
+}

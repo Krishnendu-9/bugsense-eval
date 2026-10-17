@@ -1,0 +1,27 @@
+[
+ {
+  "seq": 2,
+  "receivedAt": "2026-10-17T04:08:43.030Z",
+  "receivedMs": 1792210123030,
+  "method": "POST",
+  "url": "/api/telemetry/report",
+  "headers": {
+   "host": "localhost:7102",
+   "connection": "keep-alive",
+   "content-length": "1041",
+   "sec-ch-ua-platform": "\"Windows\"",
+   "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+   "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"HeadlessChrome\";v=\"156\"",
+   "content-type": "application/json",
+   "sec-ch-ua-mobile": "?0",
+   "accept": "*/*",
+   "origin": "http://localhost:7110",
+   "sec-fetch-site": "same-site",
+   "sec-fetch-mode": "cors",
+   "sec-fetch-dest": "empty",
+   "referer": "http://localhost:7110/",
+   "accept-encoding": "gzip, deflate, br, zstd"
+  },
+  "bodyBase64": "eyJ0aXRsZSI6IlVuY2F1Z2h0IEVycm9yOiBldmFsIHByb2JlIHRocm93YXdheSByZXBvcnQsIG5vdCBwYXJ0IG9mIHRoZSBjb3JwdXMiLCJlcnJvckxvZyI6IkVycm9yOiBldmFsIHByb2JlIHRocm93YXdheSByZXBvcnQsIG5vdCBwYXJ0IG9mIHRoZSBjb3JwdXNcbiAgICBhdCBwcm9iZVRocm93YXdheSAoaHR0cDovL2xvY2FsaG9zdDo3MTEwL3Byb2JlOjQ6NDIpXG4gICAgYXQgSFRNTEJ1dHRvbkVsZW1lbnQub25jbGljayAoaHR0cDovL2xvY2FsaG9zdDo3MTEwL3Byb2JlOjM6NTcpIiwiZGVzY3JpcHRpb24iOiJBdXRvLWNhcHR1cmVkIGNyYXNoIG9uIC9wcm9iZSIsInNldmVyaXR5IjoibWFqb3IiLCJwcmlvcml0eSI6ImhpZ2giLCJwcm9qZWN0IjoiRmluZ2VycHJpbnQgRXZhbCIsImJyZWFkY3J1bWJzIjpbeyJ0aW1lc3RhbXAiOiIyMDI2LTEwLTE3VDA0OjA4OjQyLjE0M1oiLCJjYXRlZ29yeSI6Im5hdmlnYXRpb24iLCJtZXNzYWdlIjoiUGFnZSBsb2FkZWQ6IC9wcm9iZSIsImRhdGEiOnsidXJsIjoiL3Byb2JlIn19LHsidGltZXN0YW1wIjoiMjAyNi0xMC0xN1QwNDowODo0My4wMjNaIiwiY2F0ZWdvcnkiOiJjbGljayIsIm1lc3NhZ2UiOiJDbGlja2VkIDxidXR0b24jZ28+IFwiZ29cIiIsImRhdGEiOnsidGFnIjoiYnV0dG9uIiwiaWQiOiJnbyJ9fSx7InRpbWVzdGFtcCI6IjIwMjYtMTAtMTdUMDQ6MDg6NDMuMDIzWiIsImNhdGVnb3J5IjoiZXJyb3IiLCJtZXNzYWdlIjoiQ3Jhc2g6IFVuY2F1Z2h0IEVycm9yOiBldmFsIHByb2JlIHRocm93YXdheSByZXBvcnQsIG5vdCBwYXJ0IG9mIHRoZSBjb3JwdXMiLCJkYXRhIjp7fX1dLCJicm93c2VySW5mbyI6eyJicm93c2VyIjoiQ2hyb21lIiwidmVyc2lvbiI6IiIsIm9zIjoiV2luZG93cyIsInNjcmVlblNpemUiOiIxMjgweDcyMCIsInVzZXJBZ2VudCI6Ik1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIEhlYWRsZXNzQ2hyb21lLzE1Ni4wLjgwNzguNCBTYWZhcmkvNTM3LjM2In19"
+ }
+]

@@ -1,0 +1,1022 @@
+[
+  {
+    "incident": "C4",
+    "environment": "browser-prod",
+    "browser": "chromium",
+    "appVersion": "v1",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "C5",
+    "environment": "browser-prod",
+    "browser": "chromium",
+    "appVersion": "v1",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "C6",
+    "environment": "browser-prod",
+    "browser": "chromium",
+    "appVersion": "v1",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "C4",
+    "environment": "browser-prod",
+    "browser": "chromium",
+    "appVersion": "v2",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "C5",
+    "environment": "browser-prod",
+    "browser": "chromium",
+    "appVersion": "v2",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "C6",
+    "environment": "browser-prod",
+    "browser": "chromium",
+    "appVersion": "v2",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "B1",
+    "environment": "browser-dev",
+    "browser": "chromium",
+    "appVersion": "v1",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "B2",
+    "environment": "browser-dev",
+    "browser": "chromium",
+    "appVersion": "v1",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "B3",
+    "environment": "browser-dev",
+    "browser": "chromium",
+    "appVersion": "v1",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "C4",
+    "environment": "browser-dev",
+    "browser": "chromium",
+    "appVersion": "v1",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "C5",
+    "environment": "browser-dev",
+    "browser": "chromium",
+    "appVersion": "v1",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "C6",
+    "environment": "browser-dev",
+    "browser": "chromium",
+    "appVersion": "v1",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "B1",
+    "environment": "browser-dev",
+    "browser": "firefox",
+    "appVersion": "v1",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "B2",
+    "environment": "browser-dev",
+    "browser": "firefox",
+    "appVersion": "v1",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "B3",
+    "environment": "browser-dev",
+    "browser": "firefox",
+    "appVersion": "v1",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "B1",
+    "environment": "browser-dev",
+    "browser": "webkit",
+    "appVersion": "v1",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "B2",
+    "environment": "browser-dev",
+    "browser": "webkit",
+    "appVersion": "v1",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "B3",
+    "environment": "browser-dev",
+    "browser": "webkit",
+    "appVersion": "v1",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "B1",
+    "environment": "browser-dev",
+    "browser": "chromium",
+    "appVersion": "v2",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "B2",
+    "environment": "browser-dev",
+    "browser": "chromium",
+    "appVersion": "v2",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "B3",
+    "environment": "browser-dev",
+    "browser": "chromium",
+    "appVersion": "v2",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "C4",
+    "environment": "browser-dev",
+    "browser": "chromium",
+    "appVersion": "v2",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "C5",
+    "environment": "browser-dev",
+    "browser": "chromium",
+    "appVersion": "v2",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "C6",
+    "environment": "browser-dev",
+    "browser": "chromium",
+    "appVersion": "v2",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 0,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "B1",
+    "environment": "browser-dev",
+    "browser": "firefox",
+    "appVersion": "v2",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "B2",
+    "environment": "browser-dev",
+    "browser": "firefox",
+    "appVersion": "v2",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "B3",
+    "environment": "browser-dev",
+    "browser": "firefox",
+    "appVersion": "v2",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "B1",
+    "environment": "browser-dev",
+    "browser": "webkit",
+    "appVersion": "v2",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "B2",
+    "environment": "browser-dev",
+    "browser": "webkit",
+    "appVersion": "v2",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  },
+  {
+    "incident": "B3",
+    "environment": "browser-dev",
+    "browser": "webkit",
+    "appVersion": "v2",
+    "nodeVersion": null,
+    "variant": "standard",
+    "attempts": [
+      {
+        "attempt": 1,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 2,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 3,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      },
+      {
+        "attempt": 4,
+        "reports": 2,
+        "failure": null,
+        "beforeClick": 0
+      }
+    ]
+  }
+]

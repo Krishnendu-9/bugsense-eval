@@ -1,0 +1,16 @@
+{
+  "seed": 20261017,
+  "method": "mulberry32(seed); repeat 10 times: remove pool[floor(rand() * pool.length)], where pool is the browser report ids in id order",
+  "ids": [
+    "R0119",
+    "R0265",
+    "R0024",
+    "R0421",
+    "R0251",
+    "R0343",
+    "R0009",
+    "R0292",
+    "R0041",
+    "R0022"
+  ]
+}

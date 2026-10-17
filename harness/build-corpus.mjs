@@ -43,8 +43,12 @@ const dropped = [];
 const summaries = {};
 let n = 0;
 
-function addFrom(logName, envs, cellOf) {
-  const lines = readLog(logName);
+// The Node capture runs in chunks, one log file per environment x app version.
+const NODE_LOGS = fs.readdirSync(C('capture-log')).filter((f) => /^node-.*\.jsonl$/.test(f)).map((f) => f.replace(/\.jsonl$/, '')).sort();
+
+function addFrom(logNames, envs, cellOf) {
+  const lines = [].concat(...[].concat(logNames).map((n) => readLog(n)));
+  const logName = [].concat(logNames).join('+');
   for (const s of lines.filter((l) => l.kind === 'summary')) summaries[logName] = s;
   const attempts = lines.filter((l) => l.kind === 'attempt');
   for (const env of envs) {
@@ -86,7 +90,7 @@ function addFrom(logName, envs, cellOf) {
 
 addFrom('browser-prod', ['browser-prod'], (l) => `${l.version}|${l.browser}`);
 addFrom('browser-dev', ['browser-dev'], (l) => `${l.version}|${l.browser}`);
-addFrom('node', NODE_ENVS, (l) => `${l.version}|${l.node}`);
+addFrom(NODE_LOGS, NODE_ENVS, (l) => `${l.version}|${l.node}`);
 
 // Planned counts per environment and per incident.
 const planned = {};

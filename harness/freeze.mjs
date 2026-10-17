@@ -33,7 +33,10 @@ const meta = readJsonl(C('meta.jsonl'));
 const INC = JSON.parse(fs.readFileSync(C('incidents.json'), 'utf8'));
 const controls = JSON.parse(fs.readFileSync(C('controls.json'), 'utf8'));
 const dropped = JSON.parse(fs.readFileSync(C('dropped.json'), 'utf8'));
-const logs = ['browser-prod', 'browser-dev', 'node'].map((n) => readJsonl(C(`capture-log/${n}.jsonl`)).find((l) => l.kind === 'summary'));
+const summaryOf = (n) => readJsonl(C(`capture-log/${n}.jsonl`)).find((l) => l.kind === 'summary');
+const nodeLogs = fs.readdirSync(C('capture-log')).filter((f) => /^node-.*\.jsonl$/.test(f)).map((f) => f.replace(/\.jsonl$/, '')).sort();
+const nodeSummaries = nodeLogs.map(summaryOf);
+const logs = [summaryOf('browser-prod'), summaryOf('browser-dev'), { ...nodeSummaries[0], fixtureCommit: [...new Set(nodeSummaries.map((s) => s.fixtureCommit))].join(','), env: 'node' }];
 
 // ---- totals ----
 const c2 = (n) => (n * (n - 1)) / 2;

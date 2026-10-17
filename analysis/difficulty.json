@@ -1,0 +1,1132 @@
+{
+ "browserReports": 680,
+ "incidentsInHeadline": 57,
+ "headline": {
+  "pairs": 115341,
+  "sameIncidentPairs": 1767,
+  "negativePairs": 113574,
+  "sameIncidentRate": 0.015319790880953
+ },
+ "engineDiffering": {
+  "test": "title byte-compared across the browsers present, per incident x environment x app version, standard reports only",
+  "incidents": [
+   {
+    "incident": "A1",
+    "origin": [
+     "U",
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "A2",
+    "origin": [
+     "D",
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "A3",
+    "origin": [
+     "D",
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 2 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "prefix-only"
+   },
+   {
+    "incident": "A4",
+    "origin": [
+     "D",
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 2 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "prefix-only"
+   },
+   {
+    "incident": "A5",
+    "origin": [
+     "D",
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "A6",
+    "origin": [
+     "D",
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "A7",
+    "origin": [
+     "D",
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 2 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "prefix-only"
+   },
+   {
+    "incident": "A8a",
+    "origin": [
+     "U",
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "A8b",
+    "origin": [
+     "U",
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "A9",
+    "origin": [
+     "D",
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "B1",
+    "origin": [
+     "U"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "component-stack"
+   },
+   {
+    "incident": "B2",
+    "origin": [
+     "U",
+     "D",
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "component-stack"
+   },
+   {
+    "incident": "B3",
+    "origin": [
+     "U",
+     "D",
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "component-stack"
+   },
+   {
+    "incident": "B4",
+    "origin": [
+     "U",
+     "D",
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 2 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "prefix-only"
+   },
+   {
+    "incident": "C4",
+    "origin": [
+     "U",
+     "D",
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 2 distinct across firefox, webkit",
+     "browser-prod/v2: 2 distinct across firefox, webkit",
+     "browser-dev/v1: 2 distinct across firefox, webkit",
+     "browser-dev/v2: 2 distinct across firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "C5",
+    "origin": [
+     "U",
+     "D",
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 2 distinct across firefox, webkit",
+     "browser-prod/v2: 2 distinct across firefox, webkit",
+     "browser-dev/v1: 2 distinct across firefox, webkit",
+     "browser-dev/v2: 2 distinct across firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "C6",
+    "origin": [
+     "D",
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 2 distinct across firefox, webkit",
+     "browser-prod/v2: 2 distinct across firefox, webkit",
+     "browser-dev/v1: 2 distinct across firefox, webkit",
+     "browser-dev/v2: 2 distinct across firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "D5",
+    "origin": [
+     "D",
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 2 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "prefix-only"
+   },
+   {
+    "incident": "G1",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 2 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "prefix-only"
+   },
+   {
+    "incident": "G2",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "G3",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "G4",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "G5",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "G6",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 2 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "prefix-only"
+   },
+   {
+    "incident": "G7",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 2 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "prefix-only"
+   },
+   {
+    "incident": "G8",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "G9",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 2 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "prefix-only"
+   },
+   {
+    "incident": "G10",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "G11",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "G12",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "G13",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "G14",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 2 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "prefix-only"
+   },
+   {
+    "incident": "G15",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 2 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "prefix-only"
+   },
+   {
+    "incident": "G16",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "prefix-only"
+   },
+   {
+    "incident": "G17",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "prefix-only"
+   },
+   {
+    "incident": "G18",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "G19",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "G20",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "G21",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 2 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "prefix-only"
+   },
+   {
+    "incident": "G22",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 2 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 2 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "prefix-only"
+   },
+   {
+    "incident": "G24",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "G25",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "G26",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "G27",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   },
+   {
+    "incident": "G30",
+    "origin": [
+     "B"
+    ],
+    "evidence": [
+     "browser-prod/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-prod/v2: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v1: 3 distinct across chromium, firefox, webkit",
+     "browser-dev/v2: 3 distinct across chromium, firefox, webkit"
+    ],
+    "kind": "wording"
+   }
+  ],
+  "count": 45,
+  "crossBrowserSameIncidentPairs": 1092,
+  "shareCrossBrowser": 0.6179966044142614,
+  "allSameIncidentPairsOfThoseIncidents": 1395,
+  "shareAll": 0.7894736842105263,
+  "notEngineDiffering": [
+   "C1",
+   "C2",
+   "C3",
+   "D1",
+   "D2",
+   "D3",
+   "D4",
+   "E1",
+   "E2",
+   "G23",
+   "G28",
+   "G29"
+  ],
+  "byKind": {
+   "prefix-only": {
+    "incidents": [
+     "A3",
+     "A4",
+     "A7",
+     "B4",
+     "D5",
+     "G1",
+     "G6",
+     "G7",
+     "G9",
+     "G14",
+     "G15",
+     "G16",
+     "G17",
+     "G21",
+     "G22"
+    ],
+    "crossBrowserSameIncidentPairs": 392,
+    "share": 0.22184493491794002
+   },
+   "wording": {
+    "incidents": [
+     "A1",
+     "A2",
+     "A5",
+     "A6",
+     "A8a",
+     "A8b",
+     "A9",
+     "C4",
+     "C5",
+     "C6",
+     "G2",
+     "G3",
+     "G4",
+     "G5",
+     "G8",
+     "G10",
+     "G11",
+     "G12",
+     "G13",
+     "G18",
+     "G19",
+     "G20",
+     "G24",
+     "G25",
+     "G26",
+     "G27",
+     "G30"
+    ],
+    "crossBrowserSameIncidentPairs": 664,
+    "share": 0.37577815506508205
+   },
+   "component-stack": {
+    "incidents": [
+     "B1",
+     "B2",
+     "B3"
+    ],
+    "crossBrowserSameIncidentPairs": 36,
+    "share": 0.02037351443123939
+   }
+  }
+ },
+ "versionDifferingIncidents": [
+  "A9",
+  "B1",
+  "B2",
+  "B3",
+  "G3"
+ ],
+ "scenarioAllEngineCrossBrowserPairsSplit": {
+  "recallPerPair": 0.38200339558573854,
+  "recallPerIncident": 0.383458646616541
+ },
+ "hardNegativePairs": {
+  "count": 15,
+  "pairs": [
+   {
+    "a": "A3",
+    "b": "A4",
+    "origin": "D",
+    "inCorpus": true,
+    "headlineReportPairs": 72
+   },
+   {
+    "a": "A8a",
+    "b": "A8b",
+    "origin": "D",
+    "inCorpus": true,
+    "headlineReportPairs": 72
+   },
+   {
+    "a": "B2",
+    "b": "B3",
+    "origin": "D",
+    "inCorpus": true,
+    "headlineReportPairs": 36
+   },
+   {
+    "a": "C1",
+    "b": "C2",
+    "origin": "D",
+    "inCorpus": true,
+    "headlineReportPairs": 72
+   },
+   {
+    "a": "C4",
+    "b": "C5",
+    "origin": "D",
+    "inCorpus": true,
+    "headlineReportPairs": 32
+   },
+   {
+    "a": "D2",
+    "b": "D3",
+    "origin": "D",
+    "inCorpus": true,
+    "headlineReportPairs": 72
+   },
+   {
+    "a": "E1",
+    "b": "E2",
+    "origin": "D",
+    "inCorpus": true,
+    "headlineReportPairs": 72
+   },
+   {
+    "a": "G6",
+    "b": "G7",
+    "origin": "B",
+    "inCorpus": true,
+    "headlineReportPairs": 72
+   },
+   {
+    "a": "G16",
+    "b": "G17",
+    "origin": "B",
+    "inCorpus": true,
+    "headlineReportPairs": 72
+   },
+   {
+    "a": "G19",
+    "b": "G20",
+    "origin": "B",
+    "inCorpus": true,
+    "headlineReportPairs": 72
+   },
+   {
+    "a": "G21",
+    "b": "G22",
+    "origin": "B",
+    "inCorpus": true,
+    "headlineReportPairs": 72
+   },
+   {
+    "a": "G24",
+    "b": "G25",
+    "origin": "B",
+    "inCorpus": true,
+    "headlineReportPairs": 72
+   },
+   {
+    "a": "G26",
+    "b": "G27",
+    "origin": "B",
+    "inCorpus": true,
+    "headlineReportPairs": 72
+   },
+   {
+    "a": "G28",
+    "b": "G29",
+    "origin": "B",
+    "inCorpus": true,
+    "headlineReportPairs": 72
+   },
+   {
+    "a": "A5",
+    "b": "G30",
+    "origin": "B",
+    "inCorpus": true,
+    "headlineReportPairs": 72
+   }
+  ]
+ },
+ "perIncidentPairs": {
+  "A1": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "A2": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "A3": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "A4": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "A5": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "A6": {
+   "same": 42,
+   "crossBrowser": 32,
+   "sameBrowser": 10
+  },
+  "A7": {
+   "same": 42,
+   "crossBrowser": 32,
+   "sameBrowser": 10
+  },
+  "A8a": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "A8b": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "A9": {
+   "same": 42,
+   "crossBrowser": 32,
+   "sameBrowser": 10
+  },
+  "B1": {
+   "same": 15,
+   "crossBrowser": 12,
+   "sameBrowser": 3
+  },
+  "B2": {
+   "same": 15,
+   "crossBrowser": 12,
+   "sameBrowser": 3
+  },
+  "B3": {
+   "same": 15,
+   "crossBrowser": 12,
+   "sameBrowser": 3
+  },
+  "B4": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "C1": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "C2": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "C3": {
+   "same": 42,
+   "crossBrowser": 32,
+   "sameBrowser": 10
+  },
+  "C4": {
+   "same": 12,
+   "crossBrowser": 8,
+   "sameBrowser": 4
+  },
+  "C5": {
+   "same": 12,
+   "crossBrowser": 8,
+   "sameBrowser": 4
+  },
+  "C6": {
+   "same": 12,
+   "crossBrowser": 8,
+   "sameBrowser": 4
+  },
+  "D1": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "D2": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "D3": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "D4": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "D5": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "E1": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "E2": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G1": {
+   "same": 42,
+   "crossBrowser": 32,
+   "sameBrowser": 10
+  },
+  "G2": {
+   "same": 42,
+   "crossBrowser": 32,
+   "sameBrowser": 10
+  },
+  "G3": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G4": {
+   "same": 42,
+   "crossBrowser": 32,
+   "sameBrowser": 10
+  },
+  "G5": {
+   "same": 42,
+   "crossBrowser": 32,
+   "sameBrowser": 10
+  },
+  "G6": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G7": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G8": {
+   "same": 42,
+   "crossBrowser": 32,
+   "sameBrowser": 10
+  },
+  "G9": {
+   "same": 42,
+   "crossBrowser": 32,
+   "sameBrowser": 10
+  },
+  "G10": {
+   "same": 42,
+   "crossBrowser": 32,
+   "sameBrowser": 10
+  },
+  "G11": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G12": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G13": {
+   "same": 42,
+   "crossBrowser": 32,
+   "sameBrowser": 10
+  },
+  "G14": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G15": {
+   "same": 42,
+   "crossBrowser": 32,
+   "sameBrowser": 10
+  },
+  "G16": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G17": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G18": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G19": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G20": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G21": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G22": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G23": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G24": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G25": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G26": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G27": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G28": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G29": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  },
+  "G30": {
+   "same": 30,
+   "crossBrowser": 24,
+   "sameBrowser": 6
+  }
+ },
+ "growth": {
+  "note": "with k incidents of about r reports per environment: same-incident pairs ~ k*C(r,2) per environment (linear in k); all pairs ~ C(k*r,2) (quadratic in k); negatives = all - same",
+  "preRegistered": {
+   "incidents": 27,
+   "reportsPerEnv": 166,
+   "pairsPerEnv": 13695,
+   "sameIncidentPerEnv": 429,
+   "negativePerEnv": 13266
+  },
+  "actual": {
+   "browser-prod": {
+    "reports": 349,
+    "pairs": 60726,
+    "sameIncident": 906,
+    "negative": 59820
+   },
+   "browser-dev": {
+    "reports": 331,
+    "pairs": 54615,
+    "sameIncident": 861,
+    "negative": 53754
+   }
+  }
+ }
+}

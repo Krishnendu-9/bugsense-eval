@@ -29,6 +29,7 @@ other than the builder.
 | `fixture/node-api`, `fixture/node-api.v2.patch` | the Express 4 / TypeScript fixture of section 4 |
 | `harness/` | capture harness, capture server, plan (the incident list), corpus assembly, freeze, lock check, API probe |
 | `test/` | `score-synthetic.mjs` (scorer on synthetic partitions) and `replay-stub.mjs` (replay against a local stub API) |
+| `DIFFICULTY.md` | corpus difficulty against the pre-registered figures, computed from labels and captured payloads only (`analysis/difficulty.mjs` → `analysis/difficulty.json`). Engine-differing same-incident pairs: 61.8% (pre-registered ~12%). Hard-negative pairs: 15 (pre-registered 7). Same-incident rate: 1.53% (pre-registered 3.13%). Direction: harder. The 0.85 threshold stands. Written after lock v2 and not part of the lock; the corpus files it reads are the locked ones |
 | `probes/` | the API probe: the throwaway report body, the capture script, and the shape-only output |
 | `diagnostics/` | the investigation of the 30 drops: write-ups (`C4-C6.md`, `B1-B3.md`), the instrumented re-run records (`rerun/`), and controlled diagnostic pages and their records. None of it is corpus; all of it is hashed in `corpus.lock` under `investigationFiles` |
 

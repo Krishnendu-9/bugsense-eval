@@ -46,6 +46,30 @@ let n = 0;
 // The Node capture runs in chunks, one log file per environment x app version.
 const NODE_LOGS = fs.readdirSync(C('capture-log')).filter((f) => /^node-.*\.jsonl$/.test(f)).map((f) => f.replace(/\.jsonl$/, '')).sort();
 
+// Investigation re-runs of dropped triggers (diagnostics/rerun/<label>/*.jsonl).
+// They are evidence only: their reports never enter reports.jsonl.
+const RERUN_DIR = path.join(REPO, 'diagnostics', 'rerun');
+const RERUN = [];
+if (fs.existsSync(RERUN_DIR)) {
+  for (const label of fs.readdirSync(RERUN_DIR).filter((d) => fs.statSync(path.join(RERUN_DIR, d)).isDirectory()).sort()) {
+    for (const f of fs.readdirSync(path.join(RERUN_DIR, label)).sort()) {
+      RERUN.push(...fs.readFileSync(path.join(RERUN_DIR, label, f), 'utf8').trim().split('\n').filter(Boolean).map((l) => JSON.parse(l)));
+    }
+  }
+}
+const INVESTIGATION = { C4: 'diagnostics/C4-C6.md', C5: 'diagnostics/C4-C6.md', C6: 'diagnostics/C4-C6.md', B1: 'diagnostics/B1-B3.md', B2: 'diagnostics/B1-B3.md', B3: 'diagnostics/B1-B3.md' };
+
+// The v1 capture did not record an outcome field; derive it from what it did record.
+// A zero-report attempt counts as `zero_reports` only if the page raised (Playwright
+// pageerror); otherwise `trigger_failed`.
+function v1Outcome(a, reports) {
+  if (a.failure) return 'harness_error';
+  if (a.beforeClick) return 'report_before_click';
+  if (reports === 1) return 'ok';
+  if (reports > 1) return 'multiple_reports';
+  return a.pageErrors && a.pageErrors.length ? 'zero_reports' : 'trigger_failed';
+}
+
 function addFrom(logNames, envs, cellOf) {
   const lines = [].concat(...[].concat(logNames).map((n) => readLog(n)));
   const logName = [].concat(logNames).join('+');
@@ -80,9 +104,17 @@ function addFrom(logNames, envs, cellOf) {
     }
     for (const d of lines.filter((l) => l.kind === 'dropped' && l.env === env)) {
       const tries = attempts.filter((a) => a.env === env && cellOf(a) === cellOf(d) && a.incident === d.incident && a.variant === d.variant);
+      const rerun = RERUN.filter((a) => a.env === env && a.version === d.version && a.browser === d.browser && a.incident === d.incident && a.variant === d.variant);
       dropped.push({
         incident: d.incident, environment: env, browser: d.browser || null, appVersion: d.version, nodeVersion: d.node || null, variant: d.variant,
-        attempts: tries.map((a) => ({ attempt: a.attempt, reports: a.requests.filter((r) => r.method === 'POST').length, failure: a.failure || null, beforeClick: a.beforeClick || 0 })),
+        attempts: tries.map((a) => {
+          const reports = a.requests.filter((r) => r.method === 'POST').length;
+          return { attempt: a.attempt, outcome: a.outcome || v1Outcome(a, reports), reports, requests: a.requests.length, failure: a.failure || null, beforeClick: a.beforeClick || 0, pageErrors: a.pageErrors || [] };
+        }),
+        ...(rerun.length ? {
+          rerunAttempts: rerun.map((a) => ({ attempt: a.attempt, outcome: a.outcome, postsReceived: a.postsReceived, requestsReceived: a.requestsReceived, pageSessionId: a.pageSessionId, msSincePreviousAttempt: a.msSincePreviousAttempt, msSincePreviousAttemptEnded: a.msSincePreviousAttemptEnded, triggerRaised: a.triggerRaised, startedAt: a.startedAt })),
+        } : {}),
+        investigation: INVESTIGATION[d.incident] || null,
       });
     }
   }

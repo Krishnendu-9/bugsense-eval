@@ -27,7 +27,31 @@ const files = {};
 for (const f of walk(path.join(REPO, 'corpus'))) files[rel(f)] = sha(f);
 for (const f of ['replay.mjs', 'score.mjs']) files[f] = sha(path.join(REPO, f));
 const supporting = {};
-for (const f of [...walk(path.join(REPO, 'harness')), path.join(REPO, 'test', 'score-synthetic.mjs'), path.join(REPO, 'fixture', 'shopfront.v2.patch'), path.join(REPO, 'fixture', 'node-api.v2.patch'), path.join(REPO, 'CATEGORIES.md'), path.join(REPO, 'builder-categories.md'), path.join(REPO, 'DESIGN.md')]) supporting[rel(f)] = sha(f);
+for (const f of [...walk(path.join(REPO, 'harness')), ...walk(path.join(REPO, 'test')), path.join(REPO, 'fixture', 'shopfront.v2.patch'), path.join(REPO, 'fixture', 'node-api.v2.patch'), path.join(REPO, 'CATEGORIES.md'), path.join(REPO, 'builder-categories.md'), path.join(REPO, 'DESIGN.md')]) supporting[rel(f)] = sha(f);
+
+// --lock-version N (default 1); --changelog <json> with the entries for every version.
+const argv = process.argv.slice(2);
+const opt = (k) => (argv.includes(`--${k}`) ? argv[argv.indexOf(`--${k}`) + 1] : null);
+const LOCK_VERSION = Number(opt('lock-version') || 1);
+const changelog = opt('changelog') ? JSON.parse(fs.readFileSync(path.resolve(REPO, opt('changelog')), 'utf8')) : null;
+// Investigation records and scripts (not corpus; hashed so the evidence is fixed too).
+const investigation = {};
+if (fs.existsSync(path.join(REPO, 'diagnostics'))) {
+  for (const f of walk(path.join(REPO, 'diagnostics'))) {
+    const r = rel(f);
+    if (/\/node_modules\/|\/dist-[^/]+\//.test(r)) continue;
+    investigation[r] = sha(f);
+  }
+}
+// The previous lock, as committed (the lock's history is kept in git, never amended).
+let previousLock = null;
+if (LOCK_VERSION > 1) {
+  const commit = execFileSync('git', ['log', '-1', '--format=%H', '--', 'corpus.lock'], { cwd: REPO, encoding: 'utf8' }).trim();
+  const text = execFileSync('git', ['show', `${commit}:corpus.lock`], { cwd: REPO });
+  const prev = JSON.parse(text.toString('utf8'));
+  previousLock = { lockVersion: prev.lockVersion, commit, sha256: crypto.createHash('sha256').update(text).digest('hex') };
+  if (prev.lockVersion !== LOCK_VERSION - 1) throw new Error(`previous committed lock is v${prev.lockVersion}, expected v${LOCK_VERSION - 1}`);
+}
 
 const meta = readJsonl(C('meta.jsonl'));
 const INC = JSON.parse(fs.readFileSync(C('incidents.json'), 'utf8'));
@@ -96,9 +120,11 @@ for (const n of ['22', '24']) {
 }
 const commits = [...new Set(meta.map((m) => m.fixtureCommit))];
 const lock = {
-  lockVersion: 1,
+  lockVersion: LOCK_VERSION,
   corpusVersion: 1,
   frozenAt: new Date().toISOString(),
+  ...(previousLock ? { previousLock } : {}),
+  ...(changelog ? { changelog } : {}),
   note: 'Committed before any replay against the system under test. After this commit the corpus does not change; a corpus mistake found later is fixed in a new corpus version.',
   fixtureCommits: commits,
   fixtureCommitPerCapture: Object.fromEntries(logs.map((s) => [s.env, s.fixtureCommit])),
@@ -110,11 +136,12 @@ const lock = {
   sdk: 'http://localhost:8090/sdk/bugsense.js, loaded only through the fixture <script> tag; not fetched or read by the builder',
   files,
   supportingFiles: supporting,
+  ...(Object.keys(investigation).length ? { investigationFiles: investigation } : {}),
   totals,
   hardNegativePairs: INC.hardNegativePairs,
   nodeHardNegativePairs: INC.nodeHardNegativePairs,
   controls,
-  dropped: dropped.map((d) => `${d.environment} ${d.appVersion} ${d.browser || 'node' + d.nodeVersion} ${d.incident}/${d.variant} (reports per attempt: ${d.attempts.map((a) => a.reports).join(', ')})`),
+  dropped: dropped.map((d) => `${d.environment} ${d.appVersion} ${d.browser || 'node' + d.nodeVersion} ${d.incident}/${d.variant} (reports per attempt: ${d.attempts.map((a) => a.reports).join(', ')}; outcomes: ${d.attempts.map((a) => a.outcome || '?').join(', ')}${d.rerunAttempts ? `; re-run outcomes: ${d.rerunAttempts.map((a) => a.outcome).join(', ')}` : ''})${d.investigation ? ` see ${d.investigation}` : ''}`),
 };
 fs.writeFileSync(path.join(REPO, 'corpus.lock'), JSON.stringify(lock, null, 2) + '\n');
 console.log(JSON.stringify(totals, null, 1));

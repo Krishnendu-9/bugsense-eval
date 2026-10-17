@@ -9,29 +9,96 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       }
-    ]
+    ],
+    "rerunAttempts": [
+      {
+        "attempt": 1,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "15650a3f-0f4f-4373-b8d5-1bf0e2cf901c",
+        "msSincePreviousAttempt": null,
+        "msSincePreviousAttemptEnded": null,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:20:21.548Z"
+      },
+      {
+        "attempt": 2,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "f2a89d64-8243-4601-afbd-01c9ac6b9f6f",
+        "msSincePreviousAttempt": 21885,
+        "msSincePreviousAttemptEnded": 11008,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:20:43.433Z"
+      },
+      {
+        "attempt": 3,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "cf634c68-9ab4-48be-802a-75b581780873",
+        "msSincePreviousAttempt": 21851,
+        "msSincePreviousAttemptEnded": 11003,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:21:05.284Z"
+      },
+      {
+        "attempt": 4,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "cffe32c1-241e-431a-ba53-537a4e2db348",
+        "msSincePreviousAttempt": 21860,
+        "msSincePreviousAttemptEnded": 11009,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:21:27.144Z"
+      }
+    ],
+    "investigation": "diagnostics/C4-C6.md"
   },
   {
     "incident": "C5",
@@ -43,29 +110,96 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       }
-    ]
+    ],
+    "rerunAttempts": [
+      {
+        "attempt": 1,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "c9c0a1ec-6707-43e3-bb11-c4ee1156b689",
+        "msSincePreviousAttempt": null,
+        "msSincePreviousAttemptEnded": null,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:21:38.687Z"
+      },
+      {
+        "attempt": 2,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "f1d1ad0c-160c-46ca-80b1-ce351f9bbd53",
+        "msSincePreviousAttempt": 21831,
+        "msSincePreviousAttemptEnded": 11006,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:22:00.518Z"
+      },
+      {
+        "attempt": 3,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "b086d137-65bf-4eb1-bdd3-dcfceeed7496",
+        "msSincePreviousAttempt": 21834,
+        "msSincePreviousAttemptEnded": 11007,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:22:22.352Z"
+      },
+      {
+        "attempt": 4,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "40492253-6574-46a6-9f8d-b6e84661b340",
+        "msSincePreviousAttempt": 21827,
+        "msSincePreviousAttemptEnded": 11016,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:22:44.179Z"
+      }
+    ],
+    "investigation": "diagnostics/C4-C6.md"
   },
   {
     "incident": "C6",
@@ -77,29 +211,96 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+        ]
       }
-    ]
+    ],
+    "rerunAttempts": [
+      {
+        "attempt": 1,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "9d7f5c35-cb99-4cae-b0ef-450f8c24cd20",
+        "msSincePreviousAttempt": null,
+        "msSincePreviousAttemptEnded": null,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:22:55.875Z"
+      },
+      {
+        "attempt": 2,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "75616eda-9fe0-45a9-a3eb-a1c1c871d10f",
+        "msSincePreviousAttempt": 21996,
+        "msSincePreviousAttemptEnded": 11012,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:23:17.871Z"
+      },
+      {
+        "attempt": 3,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "cb77a886-8706-4223-a800-e818279bd5c9",
+        "msSincePreviousAttempt": 21981,
+        "msSincePreviousAttemptEnded": 11002,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:23:39.852Z"
+      },
+      {
+        "attempt": 4,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "d20922aa-181d-48f9-ba25-7099facd023f",
+        "msSincePreviousAttempt": 22009,
+        "msSincePreviousAttemptEnded": 11002,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:24:01.861Z"
+      }
+    ],
+    "investigation": "diagnostics/C4-C6.md"
   },
   {
     "incident": "C4",
@@ -111,29 +312,96 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       }
-    ]
+    ],
+    "rerunAttempts": [
+      {
+        "attempt": 1,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "b0147c67-6aec-44b4-9bf0-b56d093ad89f",
+        "msSincePreviousAttempt": null,
+        "msSincePreviousAttemptEnded": null,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:26:27.940Z"
+      },
+      {
+        "attempt": 2,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "bd90484a-48f1-4ce2-bf02-945622dfb7f5",
+        "msSincePreviousAttempt": 21937,
+        "msSincePreviousAttemptEnded": 11006,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:26:49.877Z"
+      },
+      {
+        "attempt": 3,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "b07de2d6-f38b-4fa4-bac3-9df16c4acb43",
+        "msSincePreviousAttempt": 21845,
+        "msSincePreviousAttemptEnded": 11012,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:27:11.722Z"
+      },
+      {
+        "attempt": 4,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "c8955b53-2242-4007-ae89-7135bc5e82bd",
+        "msSincePreviousAttempt": 21854,
+        "msSincePreviousAttemptEnded": 11010,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:27:33.576Z"
+      }
+    ],
+    "investigation": "diagnostics/C4-C6.md"
   },
   {
     "incident": "C5",
@@ -145,29 +413,96 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       }
-    ]
+    ],
+    "rerunAttempts": [
+      {
+        "attempt": 1,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "a5da8b2a-1621-4dbe-bd7c-ba1ae2b1cecc",
+        "msSincePreviousAttempt": null,
+        "msSincePreviousAttemptEnded": null,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:27:45.188Z"
+      },
+      {
+        "attempt": 2,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "7072d377-1354-4aa5-8009-3299a0bd8ebc",
+        "msSincePreviousAttempt": 21839,
+        "msSincePreviousAttemptEnded": 11006,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:28:07.027Z"
+      },
+      {
+        "attempt": 3,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "0c62e3a7-d612-46e7-a5b1-67b4f71e1737",
+        "msSincePreviousAttempt": 21904,
+        "msSincePreviousAttemptEnded": 11012,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:28:28.931Z"
+      },
+      {
+        "attempt": 4,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "503520b9-9bf1-4714-a1fa-fe4689c42124",
+        "msSincePreviousAttempt": 21845,
+        "msSincePreviousAttemptEnded": 11010,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:28:50.776Z"
+      }
+    ],
+    "investigation": "diagnostics/C4-C6.md"
   },
   {
     "incident": "C6",
@@ -179,29 +514,96 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+        ]
       }
-    ]
+    ],
+    "rerunAttempts": [
+      {
+        "attempt": 1,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "86cef031-5646-4c3b-8d69-5a0e7821297a",
+        "msSincePreviousAttempt": null,
+        "msSincePreviousAttemptEnded": null,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:29:02.389Z"
+      },
+      {
+        "attempt": 2,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "4f926129-a8a0-40df-8646-2993ae02c2b2",
+        "msSincePreviousAttempt": 21941,
+        "msSincePreviousAttemptEnded": 11007,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:29:24.330Z"
+      },
+      {
+        "attempt": 3,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "9dc21525-c2f1-4c62-a2fd-b4ef6c7c3c9a",
+        "msSincePreviousAttempt": 21915,
+        "msSincePreviousAttemptEnded": 11003,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:29:46.245Z"
+      },
+      {
+        "attempt": 4,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "8488def7-693e-4236-a623-cc2aa4e665ff",
+        "msSincePreviousAttempt": 21898,
+        "msSincePreviousAttemptEnded": 11012,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:30:08.143Z"
+      }
+    ],
+    "investigation": "diagnostics/C4-C6.md"
   },
   {
     "incident": "B1",
@@ -213,29 +615,54 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Cannot read properties of undefined (reading 'map')",
+          "Cannot read properties of undefined (reading 'map')"
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Cannot read properties of undefined (reading 'map')",
+          "Cannot read properties of undefined (reading 'map')"
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Cannot read properties of undefined (reading 'map')",
+          "Cannot read properties of undefined (reading 'map')"
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Cannot read properties of undefined (reading 'map')",
+          "Cannot read properties of undefined (reading 'map')"
+        ]
       }
-    ]
+    ],
+    "investigation": "diagnostics/B1-B3.md"
   },
   {
     "incident": "B2",
@@ -247,29 +674,54 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       }
-    ]
+    ],
+    "investigation": "diagnostics/B1-B3.md"
   },
   {
     "incident": "B3",
@@ -281,29 +733,54 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       }
-    ]
+    ],
+    "investigation": "diagnostics/B1-B3.md"
   },
   {
     "incident": "C4",
@@ -315,29 +792,96 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       }
-    ]
+    ],
+    "rerunAttempts": [
+      {
+        "attempt": 1,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "7b272121-cada-4968-a934-8fa483e245b8",
+        "msSincePreviousAttempt": null,
+        "msSincePreviousAttemptEnded": null,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:32:11.740Z"
+      },
+      {
+        "attempt": 2,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "7fbedab3-bd0c-4723-80e6-c2e72792effc",
+        "msSincePreviousAttempt": 21993,
+        "msSincePreviousAttemptEnded": 11009,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:32:33.733Z"
+      },
+      {
+        "attempt": 3,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "501f2e92-fb39-496f-9b6c-1a5e44579664",
+        "msSincePreviousAttempt": 22041,
+        "msSincePreviousAttemptEnded": 11007,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:32:55.774Z"
+      },
+      {
+        "attempt": 4,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "ee0dc34a-39a9-4a1b-a9c8-8baeb84e0c38",
+        "msSincePreviousAttempt": 21928,
+        "msSincePreviousAttemptEnded": 11005,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:33:17.702Z"
+      }
+    ],
+    "investigation": "diagnostics/C4-C6.md"
   },
   {
     "incident": "C5",
@@ -349,29 +893,96 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       }
-    ]
+    ],
+    "rerunAttempts": [
+      {
+        "attempt": 1,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "7e318b12-f420-4147-8a86-fd31bdfaa9ec",
+        "msSincePreviousAttempt": null,
+        "msSincePreviousAttemptEnded": null,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:33:29.327Z"
+      },
+      {
+        "attempt": 2,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "63984958-b52e-4358-a97e-92f04ef28410",
+        "msSincePreviousAttempt": 21910,
+        "msSincePreviousAttemptEnded": 11006,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:33:51.237Z"
+      },
+      {
+        "attempt": 3,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "694729fa-f175-4125-98cb-e1308bd23795",
+        "msSincePreviousAttempt": 21926,
+        "msSincePreviousAttemptEnded": 11005,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:34:13.163Z"
+      },
+      {
+        "attempt": 4,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "69e20736-f88d-4464-bacc-37dfcb76e821",
+        "msSincePreviousAttempt": 22005,
+        "msSincePreviousAttemptEnded": 11008,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:34:35.168Z"
+      }
+    ],
+    "investigation": "diagnostics/C4-C6.md"
   },
   {
     "incident": "C6",
@@ -383,29 +994,96 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+        ]
       }
-    ]
+    ],
+    "rerunAttempts": [
+      {
+        "attempt": 1,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "e2df957e-eee5-4b32-8baf-bd4c0e70e4ad",
+        "msSincePreviousAttempt": null,
+        "msSincePreviousAttemptEnded": null,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:34:46.796Z"
+      },
+      {
+        "attempt": 2,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "ebfc4d3c-12b5-415d-a111-aba2b379f5b4",
+        "msSincePreviousAttempt": 22015,
+        "msSincePreviousAttemptEnded": 11011,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:35:08.811Z"
+      },
+      {
+        "attempt": 3,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "0f8b891d-4eb7-4165-b4ff-afcbde2addb1",
+        "msSincePreviousAttempt": 21964,
+        "msSincePreviousAttemptEnded": 11009,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:35:30.775Z"
+      },
+      {
+        "attempt": 4,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "0a53b9c3-a7de-4367-8c95-c1a745985add",
+        "msSincePreviousAttempt": 22168,
+        "msSincePreviousAttemptEnded": 11003,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:35:52.943Z"
+      }
+    ],
+    "investigation": "diagnostics/C4-C6.md"
   },
   {
     "incident": "B1",
@@ -417,29 +1095,54 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "can't access property \"map\", product.reviews is undefined",
+          "can't access property \"map\", product.reviews is undefined"
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "can't access property \"map\", product.reviews is undefined",
+          "can't access property \"map\", product.reviews is undefined"
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "can't access property \"map\", product.reviews is undefined",
+          "can't access property \"map\", product.reviews is undefined"
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "can't access property \"map\", product.reviews is undefined",
+          "can't access property \"map\", product.reviews is undefined"
+        ]
       }
-    ]
+    ],
+    "investigation": "diagnostics/B1-B3.md"
   },
   {
     "incident": "B2",
@@ -451,29 +1154,54 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       }
-    ]
+    ],
+    "investigation": "diagnostics/B1-B3.md"
   },
   {
     "incident": "B3",
@@ -485,29 +1213,54 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       }
-    ]
+    ],
+    "investigation": "diagnostics/B1-B3.md"
   },
   {
     "incident": "B1",
@@ -519,29 +1272,54 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "undefined is not an object (evaluating 'product.reviews.map')",
+          "undefined is not an object (evaluating 'product.reviews.map')"
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "undefined is not an object (evaluating 'product.reviews.map')",
+          "undefined is not an object (evaluating 'product.reviews.map')"
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "undefined is not an object (evaluating 'product.reviews.map')",
+          "undefined is not an object (evaluating 'product.reviews.map')"
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "undefined is not an object (evaluating 'product.reviews.map')",
+          "undefined is not an object (evaluating 'product.reviews.map')"
+        ]
       }
-    ]
+    ],
+    "investigation": "diagnostics/B1-B3.md"
   },
   {
     "incident": "B2",
@@ -553,29 +1331,54 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       }
-    ]
+    ],
+    "investigation": "diagnostics/B1-B3.md"
   },
   {
     "incident": "B3",
@@ -587,29 +1390,54 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       }
-    ]
+    ],
+    "investigation": "diagnostics/B1-B3.md"
   },
   {
     "incident": "B1",
@@ -621,29 +1449,54 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Cannot read properties of undefined (reading 'map')",
+          "Cannot read properties of undefined (reading 'map')"
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Cannot read properties of undefined (reading 'map')",
+          "Cannot read properties of undefined (reading 'map')"
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Cannot read properties of undefined (reading 'map')",
+          "Cannot read properties of undefined (reading 'map')"
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Cannot read properties of undefined (reading 'map')",
+          "Cannot read properties of undefined (reading 'map')"
+        ]
       }
-    ]
+    ],
+    "investigation": "diagnostics/B1-B3.md"
   },
   {
     "incident": "B2",
@@ -655,29 +1508,54 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       }
-    ]
+    ],
+    "investigation": "diagnostics/B1-B3.md"
   },
   {
     "incident": "B3",
@@ -689,29 +1567,54 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       }
-    ]
+    ],
+    "investigation": "diagnostics/B1-B3.md"
   },
   {
     "incident": "C4",
@@ -723,29 +1626,96 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       }
-    ]
+    ],
+    "rerunAttempts": [
+      {
+        "attempt": 1,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "3be12d47-f6dd-4142-9f43-029626f7b594",
+        "msSincePreviousAttempt": null,
+        "msSincePreviousAttemptEnded": null,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:36:08.031Z"
+      },
+      {
+        "attempt": 2,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "9d9ce07e-b76a-4127-86a3-22994742efa5",
+        "msSincePreviousAttempt": 21990,
+        "msSincePreviousAttemptEnded": 11008,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:36:30.021Z"
+      },
+      {
+        "attempt": 3,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "a9730712-0c12-4d19-8d3b-08345dada49e",
+        "msSincePreviousAttempt": 22018,
+        "msSincePreviousAttemptEnded": 11015,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:36:52.039Z"
+      },
+      {
+        "attempt": 4,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "42ac2570-07b9-4e7c-acc2-6f5c3b61108f",
+        "msSincePreviousAttempt": 21977,
+        "msSincePreviousAttemptEnded": 11010,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:37:14.016Z"
+      }
+    ],
+    "investigation": "diagnostics/C4-C6.md"
   },
   {
     "incident": "C5",
@@ -757,29 +1727,96 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Failed to fetch"
+        ]
       }
-    ]
+    ],
+    "rerunAttempts": [
+      {
+        "attempt": 1,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "0493a57e-71b4-482b-b03b-75bcefd90b58",
+        "msSincePreviousAttempt": null,
+        "msSincePreviousAttemptEnded": null,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:37:25.725Z"
+      },
+      {
+        "attempt": 2,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "a30bd450-17ba-4550-a3ff-d66b6b10fe81",
+        "msSincePreviousAttempt": 22026,
+        "msSincePreviousAttemptEnded": 11002,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:37:47.751Z"
+      },
+      {
+        "attempt": 3,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "a8e3e0ec-26ee-4b35-8044-fdae2a9c881a",
+        "msSincePreviousAttempt": 22025,
+        "msSincePreviousAttemptEnded": 11007,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:38:09.776Z"
+      },
+      {
+        "attempt": 4,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "9c0cf92c-f229-4b32-9051-18ad6c79801a",
+        "msSincePreviousAttempt": 22007,
+        "msSincePreviousAttemptEnded": 11000,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:38:31.783Z"
+      }
+    ],
+    "investigation": "diagnostics/C4-C6.md"
   },
   {
     "incident": "C6",
@@ -791,29 +1828,96 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "zero_reports",
         "reports": 0,
+        "requests": 0,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+        ]
       }
-    ]
+    ],
+    "rerunAttempts": [
+      {
+        "attempt": 1,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "e527b18c-ed94-4dbf-9377-da04e5a2eb8a",
+        "msSincePreviousAttempt": null,
+        "msSincePreviousAttemptEnded": null,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:38:43.479Z"
+      },
+      {
+        "attempt": 2,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "01cf9662-976d-4b77-9583-ae9b0ddc471b",
+        "msSincePreviousAttempt": 22117,
+        "msSincePreviousAttemptEnded": 11006,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:39:05.596Z"
+      },
+      {
+        "attempt": 3,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "e9f8c496-90ad-4ae8-8d64-8d391a3f2031",
+        "msSincePreviousAttempt": 22050,
+        "msSincePreviousAttemptEnded": 11001,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:39:27.646Z"
+      },
+      {
+        "attempt": 4,
+        "outcome": "zero_reports",
+        "postsReceived": 0,
+        "requestsReceived": 0,
+        "pageSessionId": "f1ea22cd-fb8b-4e3e-a7ee-e1b78339b0f6",
+        "msSincePreviousAttempt": 22017,
+        "msSincePreviousAttemptEnded": 11011,
+        "triggerRaised": true,
+        "startedAt": "2026-10-17T08:39:49.663Z"
+      }
+    ],
+    "investigation": "diagnostics/C4-C6.md"
   },
   {
     "incident": "B1",
@@ -825,29 +1929,54 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "can't access property \"map\", product.reviews is undefined",
+          "can't access property \"map\", product.reviews is undefined"
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "can't access property \"map\", product.reviews is undefined",
+          "can't access property \"map\", product.reviews is undefined"
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "can't access property \"map\", product.reviews is undefined",
+          "can't access property \"map\", product.reviews is undefined"
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "can't access property \"map\", product.reviews is undefined",
+          "can't access property \"map\", product.reviews is undefined"
+        ]
       }
-    ]
+    ],
+    "investigation": "diagnostics/B1-B3.md"
   },
   {
     "incident": "B2",
@@ -859,29 +1988,54 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       }
-    ]
+    ],
+    "investigation": "diagnostics/B1-B3.md"
   },
   {
     "incident": "B3",
@@ -893,29 +2047,54 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       }
-    ]
+    ],
+    "investigation": "diagnostics/B1-B3.md"
   },
   {
     "incident": "B1",
@@ -927,29 +2106,54 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "undefined is not an object (evaluating 'product.reviews.map')",
+          "undefined is not an object (evaluating 'product.reviews.map')"
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "undefined is not an object (evaluating 'product.reviews.map')",
+          "undefined is not an object (evaluating 'product.reviews.map')"
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "undefined is not an object (evaluating 'product.reviews.map')",
+          "undefined is not an object (evaluating 'product.reviews.map')"
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "undefined is not an object (evaluating 'product.reviews.map')",
+          "undefined is not an object (evaluating 'product.reviews.map')"
+        ]
       }
-    ]
+    ],
+    "investigation": "diagnostics/B1-B3.md"
   },
   {
     "incident": "B2",
@@ -961,29 +2165,54 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       }
-    ]
+    ],
+    "investigation": "diagnostics/B1-B3.md"
   },
   {
     "incident": "B3",
@@ -995,28 +2224,53 @@
     "attempts": [
       {
         "attempt": 1,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 2,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 3,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       },
       {
         "attempt": 4,
+        "outcome": "multiple_reports",
         "reports": 2,
+        "requests": 4,
         "failure": null,
-        "beforeClick": 0
+        "beforeClick": 0,
+        "pageErrors": [
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead.",
+          "Objects are not valid as a React child (found: object with keys {seconds, nanoseconds}). If you meant to render a collection of children, use an array instead."
+        ]
       }
-    ]
+    ],
+    "investigation": "diagnostics/B1-B3.md"
   }
 ]

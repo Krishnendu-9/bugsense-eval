@@ -1,0 +1,14 @@
+{
+  "name": "b-app-diagnostic",
+  "private": true,
+  "type": "module",
+  "description": "Diagnostic React app for the B1-B3 investigation (not part of the corpus)",
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.1.2",
+    "vite": "8.3.4"
+  }
+}

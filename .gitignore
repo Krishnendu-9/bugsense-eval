@@ -5,3 +5,4 @@ scratch/
 fixture/shopfront/public/pricing.wasm
 fixture/shopfront/dist/
 fixture/node-api/dist/
+diagnostics/b-app/dist-*/

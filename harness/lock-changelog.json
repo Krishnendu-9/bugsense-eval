@@ -1,0 +1,23 @@
+[
+  {
+    "lockVersion": 1,
+    "commit": "fb5ddad",
+    "date": "2026-10-17",
+    "changes": [
+      "Initial freeze of corpus v1: 748 captured reports (349 browser-prod, 331 browser-dev, 34 node-plain, 34 node-mapped) of 778 planned; 30 dropped under the retry rule; 10 seeded control picks."
+    ]
+  },
+  {
+    "lockVersion": 2,
+    "date": "2026-10-17",
+    "changes": [
+      "No report was added, removed or changed. reports.jsonl, meta.jsonl, controls.json, incidents.json, every capture log and both v1->v2 diffs have the same SHA-256 as in lock v1. The corpus is still corpus version 1.",
+      "corpus/dropped.json: every attempt of every dropped trigger now states its outcome (ok | zero_reports | multiple_reports | report_before_click | trigger_failed | harness_error) with its request count and Playwright page errors. For the v1 attempts the outcome is derived from the fields v1 recorded (POST count, harness failure, reports before the click, page errors). The 12 Chromium C4/C5/C6 entries also list the four attempts of the instrumented re-run (diagnostics/rerun/C4-C6). Every dropped entry links to its investigation. The 30 drops stand.",
+      "Investigation of the drops, before any replay: diagnostics/C4-C6.md and diagnostics/B1-B3.md. C4/C5 in Chromium: with the SDK tag on the page, Chromium dispatches no unhandledrejection event for an unhandled fetch() network failure, so no report exists; the same engine rule was reproduced without the SDK using an own fetch wrapper in a no-CORS cross-origin script. C6 in Chromium: no unhandledrejection event for a rejected res.json(), even with no SDK. B1-B3 in browser-dev: React's development build also dispatches window error events for a boundary-caught error, so the SDK sends an uncaught report as well as the boundary's captureError report; production builds dispatch none. Not caused by the fixture, the harness, repeat suppression or the per-session cap, so nothing is re-captured.",
+      "Lock mismatch. During the investigation harness/trigger.mjs had been edited in the working tree (per-attempt logging), so verify-lock reported it against lock v1. Lock v1 records the trigger that captured both browser environments (sha256 c82ea4c6..., unchanged since commit 9a4a9a2). To keep that hash a true record, harness/trigger.mjs was restored to its committed content, and the instrumentation was moved to a new file, harness/trigger-instrumented.mjs, which only the investigation re-run (harness/capture-rerun.mjs) uses. Lock v1 stays in git history unchanged (previousLock below); this lock lists the files as they are now.",
+      "Changed tools since lock v1: harness/build-corpus.mjs (dropped-attempt outcomes, re-run attempts), harness/freeze.mjs (lock versions, changelog, investigation files), harness/verify-lock.mjs (also checks investigationFiles). New: harness/trigger-instrumented.mjs, harness/capture-rerun.mjs, harness/lock-changelog.json, and test/replay-stub.mjs is now listed in supportingFiles. replay.mjs and score.mjs are unchanged.",
+      "New lock fields: previousLock (v1's commit and SHA-256), changelog, investigationFiles (every file under diagnostics/ except the diagnostic app's node_modules and build output).",
+      "Commit history note: commit d80e986 (2026-10-17 11:30:47, 'Run the Node capture in chunks ... with a gap between retries') was not made by any command visible in the builder's transcript. It contains exactly the builder's working-tree edits to harness/capture-node.mjs and score.mjs at that time; the builder's own commit 9117df8 followed three seconds later with build-corpus.mjs and freeze.mjs. The Node corpus was captured at 9117df8."
+    ]
+  }
+]

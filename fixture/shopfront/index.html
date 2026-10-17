@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopfront</title>
+    <script src="http://localhost:8090/sdk/bugsense.js" data-api-url="http://localhost:7102" data-project="Fingerprint Eval" data-widget="false"></script>
+    <script>
+      // Legacy "recently viewed" tracker carried over from the old storefront.
+      window.legacyRecentlyViewed = function (productId) {
+        var cfg = window.SHOP_CONFIG || {};
+        // G10: the recentlyViewed config block was removed in the new storefront.
+        var max = cfg.recentlyViewed.max;
+        var list = JSON.parse(localStorage.getItem('shop:recent') || '[]');
+        list.unshift(productId);
+        localStorage.setItem('shop:recent', JSON.stringify(list.slice(0, max)));
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

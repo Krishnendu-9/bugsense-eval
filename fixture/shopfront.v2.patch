@@ -1,0 +1,988 @@
+diff --git a/v1/cdn/chat-widget.js b/v2/cdn/chat-widget.js
+index 8d9bf55..c7fc2a6 100644
+--- a/v1/cdn/chat-widget.js
++++ b/v2/cdn/chat-widget.js
+@@ -1,5 +1,8 @@
+ /* Support chat widget, served from the CDN origin (no CORS headers). */
+ (function () {
++  // SHOP-482: build stamp shown in the feature registry panel.
++  var WIDGET_BUILD = "2026.10.2";
++  window.__widgetBuilds = (window.__widgetBuilds || []).concat(WIDGET_BUILD);
+   var state = { open: false, unread: 0 };
+   // E2: the widget calls a bootstrap hook that this shop never defines.
+   window.SupportChat.boot(state);
+diff --git a/v1/cdn/reviews-widget.js b/v2/cdn/reviews-widget.js
+index 25ad1ed..615f15d 100644
+--- a/v1/cdn/reviews-widget.js
++++ b/v2/cdn/reviews-widget.js
+@@ -1,5 +1,8 @@
+ /* Reviews widget, served from the CDN origin (no CORS headers). */
+ (function () {
++  // SHOP-482: build stamp shown in the feature registry panel.
++  var WIDGET_BUILD = "2026.10.2";
++  window.__widgetBuilds = (window.__widgetBuilds || []).concat(WIDGET_BUILD);
+   var config = window.ReviewsWidgetConfig;
+   // E1: the host page never sets ReviewsWidgetConfig.
+   var mount = document.querySelector(config.mountSelector);
+diff --git a/v1/index.html b/v2/index.html
+index a0ea5d4..217fab7 100644
+--- a/v1/index.html
++++ b/v2/index.html
+@@ -5,6 +5,9 @@
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Shopfront</title>
+     <script src="http://localhost:8090/sdk/bugsense.js" data-api-url="http://localhost:7102" data-project="Fingerprint Eval" data-widget="false"></script>
++    <meta name="theme-color" content="#2f6b4f" />
++    <!-- SHOP-482: feature registry panel is enabled for operators. -->
++    <meta name="shop-features" content="registry" />
+     <script>
+       // Legacy "recently viewed" tracker carried over from the old storefront.
+       window.legacyRecentlyViewed = function (productId) {
+diff --git a/v1/public/frames/card.html b/v2/public/frames/card.html
+index 4a8b19f..eff691e 100644
+--- a/v1/public/frames/card.html
++++ b/v2/public/frames/card.html
+@@ -7,6 +7,8 @@
+   <body>
+     <input id="card" autocomplete="cc-number" />
+     <script>
++      // SHOP-482: the frame reports its build to the feature registry panel.
++      window.cardFrameBuild = "2026.10.2";
+       // Card entry frame. Its functions are called by the parent checkout page.
+       window.validateCardNumber = function (value) {
+         if (typeof value !== 'string') throw new TypeError('Card number must be a string');
+diff --git a/v1/scripts/build-wasm.mjs b/v2/scripts/build-wasm.mjs
+index 9e9d7c7..c133abb 100644
+--- a/v1/scripts/build-wasm.mjs
++++ b/v2/scripts/build-wasm.mjs
+@@ -28,6 +28,8 @@ function guardedScale(limit, factor, divisor) {
+ }
+ 
+ const FUNCTIONS = [
++  // SHOP-482: build stamp routine read by the feature registry panel.
++  { name: 'build_stamp', body: [op.localGet, 0, op.i32Const, ...sleb(20261002), op.add, op.end] },
+   // G24: overflow guard set far too low for real carts.
+   { name: 'apply_discount', body: guardedScale(1000, 90, 100) },
+   // G25: same kind of guard, separate routine.
+diff --git a/v1/src/account/address.js b/v2/src/account/address.js
+index dd01ef0..8aab582 100644
+--- a/v1/src/account/address.js
++++ b/v2/src/account/address.js
+@@ -1,5 +1,10 @@
+ import { withRetry } from '../utils/withRetry.js';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('account/address');
++
+ function normalizeAddress(form) {
+   // G6: the country picker is optional, but its code is read unconditionally.
+   return { ...form, country: form.country.code.toUpperCase() };
+diff --git a/v1/src/account/addressForm.js b/v2/src/account/addressForm.js
+index 3a3a8ba..2482ede 100644
+--- a/v1/src/account/addressForm.js
++++ b/v2/src/account/addressForm.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('account/addressForm');
++
+ // Address form submission.
+ export function submitAddressForm(form) {
+   // G17: the postcode field is hidden for some countries but still required here.
+diff --git a/v1/src/account/loadOrders.js b/v2/src/account/loadOrders.js
+index 07651b0..b33d582 100644
+--- a/v1/src/account/loadOrders.js
++++ b/v2/src/account/loadOrders.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('account/loadOrders');
++
+ // Loads past orders for the account page.
+ export async function loadOrderHistory() {
+   const res = await fetch('/api/orders/history');
+diff --git a/v1/src/account/paymentMethods.js b/v2/src/account/paymentMethods.js
+index 1b32713..14af02e 100644
+--- a/v1/src/account/paymentMethods.js
++++ b/v2/src/account/paymentMethods.js
+@@ -1,5 +1,10 @@
+ import { PAYMENTS_NOT_READY, paymentsReady } from '../payments/state.js';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('account/paymentMethods');
++
+ // Saves a card on the account page.
+ export function savePaymentMethod() {
+   // G22: the account page never initialises the payment provider.
+diff --git a/v1/src/account/phone.js b/v2/src/account/phone.js
+index c3fb9a3..0ab32a3 100644
+--- a/v1/src/account/phone.js
++++ b/v2/src/account/phone.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('account/phone');
++
+ // Phone number clean-up for the account profile (copied from checkout).
+ export function normalizePhone(raw) {
+   // G27: profiles imported from the old shop have no phone.
+diff --git a/v1/src/analytics/beacon.js b/v2/src/analytics/beacon.js
+index abe9b7e..1234f57 100644
+--- a/v1/src/analytics/beacon.js
++++ b/v2/src/analytics/beacon.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('analytics/beacon');
++
+ // Sends page analytics to the collector.
+ const COLLECTOR_URL = 'http://localhost:7199/collect';
+ 
+diff --git a/v1/src/analytics/tracker.js b/v2/src/analytics/tracker.js
+index c18840d..ceb8776 100644
+--- a/v1/src/analytics/tracker.js
++++ b/v2/src/analytics/tracker.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('analytics/tracker');
++
+ // Analytics tracker with a no-op fallback when the vendor script is blocked.
+ export function getTracker() {
+   // G3: the fallback stub only implements track(), not trackPurchase().
+diff --git a/v1/src/auth/refresh.js b/v2/src/auth/refresh.js
+index fb3869d..13a3e5c 100644
+--- a/v1/src/auth/refresh.js
++++ b/v2/src/auth/refresh.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('auth/refresh');
++
+ // Background session refresh.
+ export function scheduleRefresh(session) {
+   setTimeout(function refreshSession() {
+diff --git a/v1/src/auth/session.js b/v2/src/auth/session.js
+index 6f2bb4c..389779a 100644
+--- a/v1/src/auth/session.js
++++ b/v2/src/auth/session.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('auth/session');
++
+ // Makes sure the user has a valid session before account actions.
+ export function ensureSession(token) {
+   return new Promise((resolve, reject) => {
+diff --git a/v1/src/cart/discount.js b/v2/src/cart/discount.js
+index feb30f2..5c4898b 100644
+--- a/v1/src/cart/discount.js
++++ b/v2/src/cart/discount.js
+@@ -1,5 +1,10 @@
+ import { kernelApplyDiscount } from '../pricing/wasm.js';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('cart/discount');
++
+ // Member discount on the cart page.
+ export function applyMemberDiscount(cart) {
+   // G24: the kernel's discount routine traps on carts above 10.00.
+diff --git a/v1/src/cart/loadCart.js b/v2/src/cart/loadCart.js
+index ad7c202..3349d79 100644
+--- a/v1/src/cart/loadCart.js
++++ b/v2/src/cart/loadCart.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('cart/loadCart');
++
+ // Loads the server-side cart.
+ export async function loadCart() {
+   const res = await fetch('/api/cart');
+diff --git a/v1/src/cart/persist.js b/v2/src/cart/persist.js
+index ce9df9b..e8fa57b 100644
+--- a/v1/src/cart/persist.js
++++ b/v2/src/cart/persist.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('cart/persist');
++
+ // Restores the cart saved by a previous visit.
+ export function loadSavedCart() {
+   const raw = localStorage.getItem('shop:cart');
+diff --git a/v1/src/cart/quantity.js b/v2/src/cart/quantity.js
+index 21c7151..83df26a 100644
+--- a/v1/src/cart/quantity.js
++++ b/v2/src/cart/quantity.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('cart/quantity');
++
+ // Quantity picker handling.
+ export function setQuantity(line, value) {
+   const qty = parseInt(value, 10);
+diff --git a/v1/src/cart/reserveFromCart.js b/v2/src/cart/reserveFromCart.js
+index 93a4df0..c7f2e74 100644
+--- a/v1/src/cart/reserveFromCart.js
++++ b/v2/src/cart/reserveFromCart.js
+@@ -1,5 +1,10 @@
+ import { reserveInventory } from '../inventory/api.js';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('cart/reserveFromCart');
++
+ // Reserves stock when the cart page opens.
+ export function reserveOnCartOpen(cartState) {
+   // G28: runs before the cart has loaded, so it reserves an empty list.
+diff --git a/v1/src/catalog/categoryTree.js b/v2/src/catalog/categoryTree.js
+index 13ff94c..b671fe4 100644
+--- a/v1/src/catalog/categoryTree.js
++++ b/v2/src/catalog/categoryTree.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('catalog/categoryTree');
++
+ // Category tree helpers.
+ export function countProducts(node) {
+   let total = node.products.length;
+diff --git a/v1/src/catalog/describe.js b/v2/src/catalog/describe.js
+index 02472b1..1cfa474 100644
+--- a/v1/src/catalog/describe.js
++++ b/v2/src/catalog/describe.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('catalog/describe');
++
+ // Comparison-table descriptions shared by every item type.
+ export function describeItem() {
+   // G4: assumes every item carries a meta block.
+diff --git a/v1/src/catalog/productApi.js b/v2/src/catalog/productApi.js
+index ee6890d..4a69604 100644
+--- a/v1/src/catalog/productApi.js
++++ b/v2/src/catalog/productApi.js
+@@ -1,5 +1,10 @@
+ import axios from 'axios';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('catalog/productApi');
++
+ // Loads one product from the API.
+ export async function fetchProduct(id) {
+   // C3: deleted products return 404 and nothing handles it.
+diff --git a/v1/src/catalog/products.js b/v2/src/catalog/products.js
+index 7dcb980..681b8a4 100644
+--- a/v1/src/catalog/products.js
++++ b/v2/src/catalog/products.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('catalog/products');
++
+ // In-memory catalogue lookup.
+ const CATALOG = {
+   'p-1001': { id: 'p-1001', name: 'Kettle', price: 39 },
+diff --git a/v1/src/checkout/kernelTax.js b/v2/src/checkout/kernelTax.js
+index 20cc647..5d103c1 100644
+--- a/v1/src/checkout/kernelTax.js
++++ b/v2/src/checkout/kernelTax.js
+@@ -1,5 +1,10 @@
+ import { kernelComputeTax } from '../pricing/wasm.js';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('checkout/kernelTax');
++
+ // Tax estimate on the checkout page.
+ export function estimateTax(cart) {
+   // G25: the kernel's tax routine traps on totals above 5.00.
+diff --git a/v1/src/checkout/limits.js b/v2/src/checkout/limits.js
+index 3c56ca7..3c7c335 100644
+--- a/v1/src/checkout/limits.js
++++ b/v2/src/checkout/limits.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('checkout/limits');
++
+ // Order value limit for card payments.
+ const ORDER_LIMIT_EUR = 5000;
+ 
+diff --git a/v1/src/checkout/phone.js b/v2/src/checkout/phone.js
+index ca61b19..a43ae8f 100644
+--- a/v1/src/checkout/phone.js
++++ b/v2/src/checkout/phone.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('checkout/phone');
++
+ // Phone number clean-up for the checkout contact step.
+ export function normalizePhone(raw) {
+   // G26: the phone field is optional at checkout.
+diff --git a/v1/src/checkout/placeOrder.js b/v2/src/checkout/placeOrder.js
+index 8548f0f..3b77080 100644
+--- a/v1/src/checkout/placeOrder.js
++++ b/v2/src/checkout/placeOrder.js
+@@ -1,5 +1,10 @@
+ import axios from 'axios';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('checkout/placeOrder');
++
+ // Submits the order to the API.
+ export async function placeOrder(cart) {
+   // C1: the orders API returns 500 for carts with gift wrapping.
+diff --git a/v1/src/checkout/reserveAtCheckout.js b/v2/src/checkout/reserveAtCheckout.js
+index 5603ecb..5de71bd 100644
+--- a/v1/src/checkout/reserveAtCheckout.js
++++ b/v2/src/checkout/reserveAtCheckout.js
+@@ -1,5 +1,10 @@
+ import { reserveInventory } from '../inventory/api.js';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('checkout/reserveAtCheckout');
++
+ // Reserves stock when the customer confirms the order.
+ export function reserveForCheckout(lines) {
+   // G29: the in-stock filter is inverted, so every line is dropped.
+diff --git a/v1/src/checkout/startCheckout.js b/v2/src/checkout/startCheckout.js
+index 7c7f16b..714f420 100644
+--- a/v1/src/checkout/startCheckout.js
++++ b/v2/src/checkout/startCheckout.js
+@@ -1,5 +1,10 @@
+ import { PAYMENTS_NOT_READY, paymentsReady } from '../payments/state.js';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('checkout/startCheckout');
++
+ // Starts checkout.
+ export function startCheckout() {
+   // G21: checkout starts before the payment provider finished initialising.
+diff --git a/v1/src/checkout/summary.js b/v2/src/checkout/summary.js
+index 8817fc1..ec61d2e 100644
+--- a/v1/src/checkout/summary.js
++++ b/v2/src/checkout/summary.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('checkout/summary');
++
+ // Order summary recalculation.
+ export function recalculateSummary(order) {
+   // G16: orders restored from a draft have no totals yet.
+diff --git a/v1/src/checkout/tax.js b/v2/src/checkout/tax.js
+index cf4164f..9b8a3ef 100644
+--- a/v1/src/checkout/tax.js
++++ b/v2/src/checkout/tax.js
+@@ -1,5 +1,10 @@
+ import { withRetry } from '../utils/withRetry.js';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('checkout/tax');
++
+ const RATES = { 'DE-BE': 0.19, 'FR-IDF': 0.2 };
+ 
+ function taxRate(region) {
+diff --git a/v1/src/checkout/validateCheckout.js b/v2/src/checkout/validateCheckout.js
+index c2b32d4..5488c0b 100644
+--- a/v1/src/checkout/validateCheckout.js
++++ b/v2/src/checkout/validateCheckout.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('checkout/validateCheckout');
++
+ // Checkout validation before the payment step.
+ export function validateCheckout(cart) {
+   const currencies = new Set(cart.lines.map((line) => line.currency));
+diff --git a/v1/src/community/thread.js b/v2/src/community/thread.js
+index 9c8092a..8dfb9b0 100644
+--- a/v1/src/community/thread.js
++++ b/v2/src/community/thread.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('community/thread');
++
+ // Flattens a nested comment thread for rendering.
+ export function flattenThread(node, depth = 0, out = []) {
+   // G8: deleted comments have author null.
+diff --git a/v1/src/components/AutoHeightBanner.jsx b/v2/src/components/AutoHeightBanner.jsx
+index 88e27a6..cdf4140 100644
+--- a/v1/src/components/AutoHeightBanner.jsx
++++ b/v2/src/components/AutoHeightBanner.jsx
+@@ -1,5 +1,10 @@
+ import { useEffect, useRef } from 'react';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('components/AutoHeightBanner');
++
+ // Banner that sizes itself to its content.
+ export function AutoHeightBanner() {
+   const ref = useRef(null);
+diff --git a/v1/src/components/ErrorBoundary.jsx b/v2/src/components/ErrorBoundary.jsx
+index 6fad72c..e5837da 100644
+--- a/v1/src/components/ErrorBoundary.jsx
++++ b/v2/src/components/ErrorBoundary.jsx
+@@ -1,5 +1,10 @@
+ import { Component } from 'react';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('components/ErrorBoundary');
++
+ // Reports render errors through the SDK's documented manual-capture call,
+ // with React's component stack as the free-text context.
+ export class ErrorBoundary extends Component {
+diff --git a/v1/src/components/Filters.jsx b/v2/src/components/Filters.jsx
+index 9d63caf..a5bb228 100644
+--- a/v1/src/components/Filters.jsx
++++ b/v2/src/components/Filters.jsx
+@@ -1,5 +1,10 @@
+ import { useState } from 'react';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('components/Filters');
++
+ // Catalogue filters with an expandable "more filters" section.
+ export function Filters() {
+   const [expanded, setExpanded] = useState(false);
+diff --git a/v1/src/components/OrderHistory.jsx b/v2/src/components/OrderHistory.jsx
+index 2d0de51..41dec94 100644
+--- a/v1/src/components/OrderHistory.jsx
++++ b/v2/src/components/OrderHistory.jsx
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('components/OrderHistory');
++
+ // Past orders table.
+ export function OrderHistory({ orders }) {
+   return (
+diff --git a/v1/src/components/ProductCard.jsx b/v2/src/components/ProductCard.jsx
+index 8a2deca..620b9b1 100644
+--- a/v1/src/components/ProductCard.jsx
++++ b/v2/src/components/ProductCard.jsx
+@@ -1,5 +1,10 @@
+ import { formatPrice } from '../utils/formatPrice.js';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('components/ProductCard');
++
+ // Catalogue card, also used for draft products in the merchant preview.
+ export function ProductCard({ product, onQuickView }) {
+   function handleQuickView() {
+diff --git a/v1/src/components/ProductReviews.jsx b/v2/src/components/ProductReviews.jsx
+index 6163053..8a5ec79 100644
+--- a/v1/src/components/ProductReviews.jsx
++++ b/v2/src/components/ProductReviews.jsx
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('components/ProductReviews');
++
+ // Review list on the product page.
+ export function ProductReviews({ product }) {
+   // B1: products imported from the marketplace have no reviews array.
+diff --git a/v1/src/components/ProfileBadge.jsx b/v2/src/components/ProfileBadge.jsx
+index cd35072..653983e 100644
+--- a/v1/src/components/ProfileBadge.jsx
++++ b/v2/src/components/ProfileBadge.jsx
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('components/ProfileBadge');
++
+ // Badge in the account header.
+ export function ProfileBadge({ user }) {
+   return (
+diff --git a/v1/src/components/ShareLinks.jsx b/v2/src/components/ShareLinks.jsx
+index 52781e7..91c352e 100644
+--- a/v1/src/components/ShareLinks.jsx
++++ b/v2/src/components/ShareLinks.jsx
+@@ -1,5 +1,10 @@
+ import { slugify } from '../utils/slugify.js';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('components/ShareLinks');
++
+ function buildProductUrl(product) {
+   return `/p/${slugify(product.name)}`;
+ }
+diff --git a/v1/src/components/WishlistRow.jsx b/v2/src/components/WishlistRow.jsx
+index 9abcfcf..b0aada8 100644
+--- a/v1/src/components/WishlistRow.jsx
++++ b/v2/src/components/WishlistRow.jsx
+@@ -1,5 +1,10 @@
+ import { formatPrice } from '../utils/formatPrice.js';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('components/WishlistRow');
++
+ // One row of the wishlist.
+ export function WishlistRow({ item, onMove }) {
+   function handleMoveToCart() {
+diff --git a/v2/src/features/registry.js b/v2/src/features/registry.js
+new file mode 100644
+index 0000000..afb25d8
+--- /dev/null
++++ b/v2/src/features/registry.js
+@@ -0,0 +1,12 @@
++// Feature registry (SHOP-482): modules announce themselves so the
++// operator flags panel can list what is deployed.
++const registry = new Map();
++
++export function registerFeature(name, owner = "storefront") {
++  registry.set(name, { owner, at: registry.size });
++  return registry.size;
++}
++
++export function listFeatures() {
++  return [...registry.keys()].sort();
++}
+diff --git a/v1/src/giftcards/parse.js b/v2/src/giftcards/parse.js
+index 34ceb60..83e7163 100644
+--- a/v1/src/giftcards/parse.js
++++ b/v2/src/giftcards/parse.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('giftcards/parse');
++
+ // Gift card code parsing.
+ export function parseGiftCard(code) {
+   // G5: codes are not trimmed or upper-cased before matching.
+diff --git a/v1/src/i18n/loadLocale.js b/v2/src/i18n/loadLocale.js
+index ab43860..981b1e0 100644
+--- a/v1/src/i18n/loadLocale.js
++++ b/v2/src/i18n/loadLocale.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('i18n/loadLocale');
++
+ // Loads a translation bundle on demand.
+ export async function loadLocale(lang) {
+   // G13: no fallback when the bundle for the user's language does not exist.
+diff --git a/v1/src/inventory/api.js b/v2/src/inventory/api.js
+index 5bbd6e0..38d3943 100644
+--- a/v1/src/inventory/api.js
++++ b/v2/src/inventory/api.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('inventory/api');
++
+ // Inventory reservation client.
+ export async function reserveInventory(items) {
+   const res = await fetch('/api/inventory/reserve', {
+diff --git a/v1/src/inventory/validate.js b/v2/src/inventory/validate.js
+index df92c2c..f4d29b8 100644
+--- a/v1/src/inventory/validate.js
++++ b/v2/src/inventory/validate.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('inventory/validate');
++
+ // Validates the cached inventory snapshot.
+ export function readInventorySnapshot() {
+   const payload = JSON.parse(localStorage.getItem('shop:inventory') || '{}');
+diff --git a/v1/src/lazy/PromoPanel.jsx b/v2/src/lazy/PromoPanel.jsx
+index 690b126..ad29821 100644
+--- a/v1/src/lazy/PromoPanel.jsx
++++ b/v2/src/lazy/PromoPanel.jsx
+@@ -1,5 +1,10 @@
+ import { useReady } from '../ui.jsx';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('lazy/PromoPanel');
++
+ // Lazily loaded promotion panel.
+ export default function PromoPanel() {
+   useReady();
+diff --git a/v1/src/main.jsx b/v2/src/main.jsx
+index bf1c6e9..ff0fcd5 100644
+--- a/v1/src/main.jsx
++++ b/v2/src/main.jsx
+@@ -2,6 +2,11 @@ import { createRoot } from 'react-dom/client';
+ import { findRoute } from './routes.jsx';
+ import { Page, useReady } from './ui.jsx';
+ 
++import { registerFeature } from './features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('main');
++
+ function Home() {
+   useReady();
+   return <Page title="Shopfront">Welcome.</Page>;
+diff --git a/v1/src/net/withTimeout.js b/v2/src/net/withTimeout.js
+index bd9ad46..138bfbc 100644
+--- a/v1/src/net/withTimeout.js
++++ b/v2/src/net/withTimeout.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('net/withTimeout');
++
+ // Races a promise against a timer.
+ export function withTimeout(promise, ms) {
+   // D2: rejects with a bare string, and callers never attach a handler.
+diff --git a/v1/src/pages/accountPages.jsx b/v2/src/pages/accountPages.jsx
+index 01a5504..1ccd47c 100644
+--- a/v1/src/pages/accountPages.jsx
++++ b/v2/src/pages/accountPages.jsx
+@@ -21,6 +21,11 @@ import { buildShippingLabel } from '../shipping/label.js';
+ import { savePaymentMethod } from '../account/paymentMethods.js';
+ import { normalizePhone } from '../account/phone.js';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('pages/accountPages');
++
+ const TIMESTAMP = { seconds: 1760000000, nanoseconds: 0 };
+ 
+ export function WishlistPage() {
+diff --git a/v1/src/pages/cartPages.jsx b/v2/src/pages/cartPages.jsx
+index d985859..bdce6d1 100644
+--- a/v1/src/pages/cartPages.jsx
++++ b/v2/src/pages/cartPages.jsx
+@@ -10,6 +10,11 @@ import { loadPricingKernel } from '../pricing/wasm.js';
+ import { loadPricingPlugin } from '../pricing/plugin.js';
+ import { reserveOnCartOpen } from '../cart/reserveFromCart.js';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('pages/cartPages');
++
+ export function CartCouponPage() {
+   useReady();
+   const [cart] = useState(() => ({ lines: [], total: 0 }));
+diff --git a/v1/src/pages/catalogPages.jsx b/v2/src/pages/catalogPages.jsx
+index 41bbe79..526575e 100644
+--- a/v1/src/pages/catalogPages.jsx
++++ b/v2/src/pages/catalogPages.jsx
+@@ -15,6 +15,11 @@ import { isEligible } from '../promotions/rules.js';
+ import { deepClone } from '../utils/deepClone.js';
+ import { AutoHeightBanner } from '../components/AutoHeightBanner.jsx';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('pages/catalogPages');
++
+ const PromoPanel = lazy(() => import('../lazy/PromoPanel.jsx'));
+ 
+ export function PromoPage() {
+diff --git a/v1/src/pages/checkoutPages.jsx b/v2/src/pages/checkoutPages.jsx
+index 9749e66..d80f492 100644
+--- a/v1/src/pages/checkoutPages.jsx
++++ b/v2/src/pages/checkoutPages.jsx
+@@ -13,6 +13,11 @@ import { loadPricingKernel } from '../pricing/wasm.js';
+ import { normalizePhone } from '../checkout/phone.js';
+ import { reserveForCheckout } from '../checkout/reserveAtCheckout.js';
+ 
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('pages/checkoutPages');
++
+ const MIXED_CART = {
+   lines: [
+     { sku: 'sku-1', currency: 'EUR' },
+diff --git a/v1/src/payments/cardFrame.js b/v2/src/payments/cardFrame.js
+index c77f227..0f93f1c 100644
+--- a/v1/src/payments/cardFrame.js
++++ b/v2/src/payments/cardFrame.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('payments/cardFrame');
++
+ // Talks to the same-origin card entry frame.
+ export function validateCardInFrame(frame, cardNumber) {
+   // G14: the card number is passed as a number; the frame expects a string.
+diff --git a/v1/src/payments/state.js b/v2/src/payments/state.js
+index c80491c..6d2e76a 100644
+--- a/v1/src/payments/state.js
++++ b/v2/src/payments/state.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('payments/state');
++
+ // Payment provider state, shared by checkout and account pages.
+ export const PAYMENTS_NOT_READY = new Error('Payments SDK not ready');
+ 
+diff --git a/v1/src/pricing/plugin.js b/v2/src/pricing/plugin.js
+index bf879e8..cf8f034 100644
+--- a/v1/src/pricing/plugin.js
++++ b/v2/src/pricing/plugin.js
+@@ -1,6 +1,13 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('pricing/plugin');
++
+ // Pricing plugin delivered as source text and loaded through a blob: URL.
+ const PLUGIN_SOURCE = [
+   'window.pricingPlugin = {',
++  '  // SHOP-482: build stamp shown in the feature registry panel.',
++  '  build: "2026.10.2",',
+   '  apply: function (cart) {',
+   '    // G12: lines without a discount block are not handled.',
+   '    return cart.lines.map(function (line) { return line.price * (1 - line.discount.rate); });',
+diff --git a/v1/src/pricing/wasm.js b/v2/src/pricing/wasm.js
+index 44080c5..333ca78 100644
+--- a/v1/src/pricing/wasm.js
++++ b/v2/src/pricing/wasm.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('pricing/wasm');
++
+ // Pricing kernel compiled to WebAssembly.
+ let kernel = null;
+ 
+diff --git a/v1/src/promotions/rules.js b/v2/src/promotions/rules.js
+index e776301..d63dce1 100644
+--- a/v1/src/promotions/rules.js
++++ b/v2/src/promotions/rules.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('promotions/rules');
++
+ // Promotion rules are authored in the CMS as expressions and compiled at runtime.
+ const GOLD_RULE = 'return cart.total >= 100 && cart.customer.tier === "gold";';
+ 
+diff --git a/v1/src/routes.jsx b/v2/src/routes.jsx
+index db30983..5f7cde6 100644
+--- a/v1/src/routes.jsx
++++ b/v2/src/routes.jsx
+@@ -3,6 +3,11 @@ import * as checkout from './pages/checkoutPages.jsx';
+ import * as catalog from './pages/catalogPages.jsx';
+ import * as account from './pages/accountPages.jsx';
+ 
++import { registerFeature } from './features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('routes');
++
+ // One trigger route per deliberate bug. The harness's plan
+ // (harness/plan.mjs) maps incident IDs to these paths.
+ const ROUTES = [
+diff --git a/v1/src/shipping/estimate.js b/v2/src/shipping/estimate.js
+index d37a401..e39a0f6 100644
+--- a/v1/src/shipping/estimate.js
++++ b/v2/src/shipping/estimate.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('shipping/estimate');
++
+ // Reads the cached shipping quote.
+ export function shippingZone() {
+   const quote = JSON.parse(localStorage.getItem('shop:quote') || '{}');
+diff --git a/v1/src/shipping/label.js b/v2/src/shipping/label.js
+index 7d2599a..d997f57 100644
+--- a/v1/src/shipping/label.js
++++ b/v2/src/shipping/label.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('shipping/label');
++
+ // Builds the shipping label for an order.
+ export function buildShippingLabel(order) {
+   // G19: guest orders have no billing address.
+diff --git a/v1/src/storage/quota.js b/v2/src/storage/quota.js
+index e539f6a..46e0dab 100644
+--- a/v1/src/storage/quota.js
++++ b/v2/src/storage/quota.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('storage/quota');
++
+ // Saves a review draft if it fits the storage budget.
+ const BUDGET_KB = 50;
+ 
+diff --git a/v1/src/store/cartReducer.js b/v2/src/store/cartReducer.js
+index 984da10..a1e6c4f 100644
+--- a/v1/src/store/cartReducer.js
++++ b/v2/src/store/cartReducer.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('store/cartReducer');
++
+ // Cart store: a tiny reducer-based store used by the cart pages.
+ export function cartReducer(state, action) {
+   switch (action.type) {
+diff --git a/v1/src/ui.jsx b/v2/src/ui.jsx
+index 413b0c8..8a77195 100644
+--- a/v1/src/ui.jsx
++++ b/v2/src/ui.jsx
+@@ -1,5 +1,10 @@
+ import { useEffect } from 'react';
+ 
++import { registerFeature } from './features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('ui');
++
+ // Per-run data the harness injects with an init script (a stand-in for the
+ // data a particular user happens to have). Never part of a report.
+ export function fixtureData() {
+diff --git a/v1/src/uploads/uploadImage.js b/v2/src/uploads/uploadImage.js
+index 1c7c446..e1d9ce2 100644
+--- a/v1/src/uploads/uploadImage.js
++++ b/v2/src/uploads/uploadImage.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('uploads/uploadImage');
++
+ // Uploads a product photo.
+ const UPLOAD_URL = 'http://localhost:7198/upload';
+ 
+diff --git a/v1/src/utils/deepClone.js b/v2/src/utils/deepClone.js
+index 8f24b91..741a2fc 100644
+--- a/v1/src/utils/deepClone.js
++++ b/v2/src/utils/deepClone.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('utils/deepClone');
++
+ // Generic deep clone used for saved filters.
+ export function deepClone(value) {
+   if (value === null || typeof value !== 'object') return value;
+diff --git a/v1/src/utils/formatPrice.js b/v2/src/utils/formatPrice.js
+index e3fa561..38da483 100644
+--- a/v1/src/utils/formatPrice.js
++++ b/v2/src/utils/formatPrice.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('utils/formatPrice');
++
+ // Shared price formatter.
+ export function formatPrice(amount) {
+   return '$' + amount.toFixed(2);
+diff --git a/v1/src/utils/slugify.js b/v2/src/utils/slugify.js
+index 9665efa..12b2978 100644
+--- a/v1/src/utils/slugify.js
++++ b/v2/src/utils/slugify.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('utils/slugify');
++
+ // URL slug builder for share links.
+ const TRANSLIT = { 'é': 'e', 'è': 'e', 'ü': 'u', 'ö': 'o', 'ñ': 'n', 'ç': 'c', 'å': 'a' };
+ 
+diff --git a/v1/src/utils/withRetry.js b/v2/src/utils/withRetry.js
+index 426df19..9e9bdc1 100644
+--- a/v1/src/utils/withRetry.js
++++ b/v2/src/utils/withRetry.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('utils/withRetry');
++
+ // Runs a task a few times before giving up.
+ export function withRetry(task, attempts = 3) {
+   let lastError;
+diff --git a/v1/src/wishlist/sync.js b/v2/src/wishlist/sync.js
+index 023200a..7bc0c9b 100644
+--- a/v1/src/wishlist/sync.js
++++ b/v2/src/wishlist/sync.js
+@@ -1,3 +1,8 @@
++import { registerFeature } from '../features/registry.js';
++
++// SHOP-482: announce this module to the feature registry.
++registerFeature('wishlist/sync');
++
+ // Pushes the wishlist to the server, retrying a configurable number of times.
+ function pushWishlist(items) {
+   // G15: items added from search results carry no sku.

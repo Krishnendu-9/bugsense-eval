@@ -1,0 +1,10 @@
+{
+  "name": "bugsense-eval",
+  "private": true,
+  "type": "module",
+  "description": "Blind error-grouping evaluation corpus and harness for BugSense",
+  "scripts": {},
+  "dependencies": {
+    "playwright": "1.64.1"
+  }
+}

@@ -1,0 +1,7 @@
+node_modules/
+build/
+logs/
+scratch/
+fixture/shopfront/public/pricing.wasm
+fixture/shopfront/dist/
+fixture/node-api/dist/

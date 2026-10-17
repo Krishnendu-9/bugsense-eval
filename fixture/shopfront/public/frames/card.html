@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Card entry</title>
+  </head>
+  <body>
+    <input id="card" autocomplete="cc-number" />
+    <script>
+      // Card entry frame. Its functions are called by the parent checkout page.
+      window.validateCardNumber = function (value) {
+        if (typeof value !== 'string') throw new TypeError('Card number must be a string');
+        return /^\d{12,19}$/.test(value.replace(/\s+/g, ''));
+      };
+    </script>
+  </body>
+</html>

@@ -543,7 +543,7 @@ for (const e of NODE_ENVS) P(statRow(e, node1.byEnvironment[e]));
 P(statRow('node-plain x node-mapped', node1.crossPlainMapped));
 for (const e of NODE_ENVS) for (const [cls, s] of Object.entries(node1.axes[e]).sort()) P(statRow(`${e}: ${cls}`, s));
 P();
-P(`Node x browser pairs: ${node1.nodeBrowserPairs}, merged: ${node1.nodeBrowserMerges.length}${node1.nodeBrowserMerges.length ? ' (' + node1.nodeBrowserMerges.slice(0, 200).map((m) => `${m.a} ${m.incidentA} + ${m.b} ${m.incidentB} on ${m.bug}`).join('; ') + ')' : ''}.`);
+P(`Node x browser pairs: ${node1.nodeBrowserPairs}, merged: ${node1.nodeBrowserMerges.length}${node1.nodeBrowserMerges.length ? ' (' + node1.nodeBrowserMerges.slice(0, LIST_LIMIT).map((m) => `${m.a} ${m.incidentA} + ${m.b} ${m.incidentB} on ${m.bug}`).join('; ') + ')' : ''}.`);
 P(`Node reports landing on a seeded bug: ${node1.seededLandings.length ? node1.seededLandings.map((s) => `${s.id} (${s.incident})`).join(', ') : 'none'}.`);
 P();
 P('| kind | pair | incidents | where |');

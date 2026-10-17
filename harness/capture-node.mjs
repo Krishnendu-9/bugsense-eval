@@ -48,7 +48,11 @@ for (const version of APP_VERSIONS) {
 }
 
 const cap = await startCaptureServer({ port: CAPTURE_PORT, host: '0.0.0.0' });
-const logFile = TEST ? null : path.join(REPO, 'corpus', 'capture-log', 'node.jsonl');
+// One log file per chunk (environment x app version), so each chunk runs in a few minutes.
+const ONLY_ENV = args.env && args.env !== true ? String(args.env) : null;
+const ONLY_VERSION = args.version && args.version !== true ? String(args.version) : null;
+if (!TEST && (!ONLY_ENV || !ONLY_VERSION)) throw new Error('--env node-plain|node-mapped and --version v1|v2 are required (one chunk per run)');
+const logFile = TEST ? null : path.join(REPO, 'corpus', 'capture-log', `node-${ONLY_ENV}-${ONLY_VERSION}.jsonl`);
 if (logFile) { fs.mkdirSync(path.dirname(logFile), { recursive: true }); fs.writeFileSync(logFile, ''); }
 const log = (o) => { if (logFile) fs.appendFileSync(logFile, JSON.stringify(o) + '\n'); };
 
@@ -74,8 +78,9 @@ async function fire(req) {
 let accepted = 0;
 let dropped = 0;
 let planned = 0;
-for (const env of NODE_ENVS) {
-  for (const version of APP_VERSIONS) {
+const RETRY_GAP_MS = 11000;
+for (const env of NODE_ENVS.filter((e) => !ONLY_ENV || e === ONLY_ENV)) {
+  for (const version of APP_VERSIONS.filter((v) => !ONLY_VERSION || v === ONLY_VERSION)) {
     for (const node of NODE_VERSIONS) {
       const runArgs = ['run', '-d', '--name', CONTAINER, '--network', DOCKER_NET, '-p', '7130:7130', '--add-host', 'host.docker.internal:host-gateway',
         '-e', `REPORT_URL=http://host.docker.internal:${CAPTURE_PORT}/api/telemetry/report`,
@@ -84,7 +89,15 @@ for (const env of NODE_ENVS) {
       for (const t of plan) {
         planned++;
         let outcome = null;
+        let previousAt = null;
         for (let attempt = 1; attempt <= MAX_ATTEMPTS && !outcome; attempt++) {
+          if (previousAt !== null) {
+            const wait = previousAt + RETRY_GAP_MS - Date.now();
+            if (wait > 0) await new Promise((r) => setTimeout(r, wait));
+          }
+          const attemptStartedAt = Date.now();
+          const msSincePreviousAttempt = previousAt === null ? null : attemptStartedAt - previousAt;
+          previousAt = attemptStartedAt;
           // Fresh process per trigger, so no state carries over between triggers.
           for (let boot = 1; ; boot++) {
             try { docker(['rm', '-f', CONTAINER], { stdio: 'ignore' }); } catch { /* none */ }
@@ -99,7 +112,10 @@ for (const env of NODE_ENVS) {
           const records = cap.since(startSeq);
           const posts = records.filter((r) => r.method === 'POST');
           const ok = posts.length === 1;
-          log({ kind: 'attempt', env, version, node, image: `node:${node}-alpine@${images[node]}`, incident: t.incident, variant: t.variant, trigger: { request: t.request }, attempt, ok, httpStatus: status, fixtureCommit: commit,
+          const attemptOutcome = posts.length === 1 ? 'ok' : posts.length === 0 ? 'zero_reports' : 'multiple_reports';
+          log({ kind: 'attempt', env, version, node, image: `node:${node}-alpine@${images[node]}`, incident: t.incident, variant: t.variant, trigger: { request: t.request }, attempt, ok,
+            outcome: attemptOutcome, postsReceived: posts.length, requestsReceived: records.length, processSessionId: `${env}/${version}/node${node}/${t.incident}/${t.variant}/a${attempt}`, msSincePreviousAttempt,
+            httpStatus: status, fixtureCommit: commit,
             requests: records.map(({ seq, receivedAt, method, url, headers, bodyBase64 }) => ({ seq, receivedAt, method, url, headers, bodyBase64 })) });
           if (TEST) for (const p of posts) { const b = JSON.parse(Buffer.from(p.bodyBase64, 'base64').toString('utf8')); console.log(`   title=${JSON.stringify(b.title).slice(0, 140)}\n   stack=${JSON.stringify(b.errorLog.split('\n').slice(0, 4))}`); }
           if (ok) outcome = { attempt, post: posts[0] };
@@ -115,6 +131,6 @@ for (const env of NODE_ENVS) {
   }
   if (TEST && env === 'node-plain' && !args['both-envs']) break;
 }
-log({ kind: 'summary', env: 'node', planned, accepted, dropped, fixtureCommit: commit, images, finishedAt: new Date().toISOString() });
+log({ kind: 'summary', env: ONLY_ENV || 'node', version: ONLY_VERSION || null, planned, accepted, dropped, fixtureCommit: commit, images, finishedAt: new Date().toISOString() });
 console.log(`node: planned ${planned}, accepted ${accepted}, dropped ${dropped}`);
 await cap.close();

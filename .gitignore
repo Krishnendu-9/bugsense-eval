@@ -7,3 +7,4 @@ fixture/shopfront/dist/
 fixture/node-api/dist/
 diagnostics/b-app/dist-*/
 v2-prediction-model/out/
+v2-prediction-model/scored/

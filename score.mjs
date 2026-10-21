@@ -27,12 +27,23 @@ for (let i = 2; i < process.argv.length; i++) {
   else positional.push(a);
 }
 if (positional.length !== 2 || !opts.out) {
-  console.error('usage: node score.mjs <run1.jsonl> <run2.jsonl> --out <dir> [--corpus <dir>] [--list-limit <n>]');
+  console.error('usage: node score.mjs <run1.jsonl> <run2.jsonl> --out <dir> [--corpus <dir>] [--list-limit <n>] [--seeded-bugs <n>]');
   process.exit(2);
 }
 const CORPUS = path.resolve(opts.corpus || path.join(HERE, 'corpus'));
 const OUT = path.resolve(opts.out);
 const LIST_LIMIT = opts['list-limit'] ? Number(opts['list-limit']) : Infinity;
+// The number of bugs the seed script created, as its own output reports it
+// ("Bugs: N"). v1's seed created 4, which is the value when the option is left
+// out, so v1's results reproduce unchanged. The v2 measurement passes its
+// seed's count (fingerprint-eval-v2.md, Amendment 2: the second permitted
+// scorer change, declared before the measurement).
+const SEEDED_BUGS_GIVEN = opts['seeded-bugs'] !== undefined;
+const SEEDED_BUGS = SEEDED_BUGS_GIVEN ? Number(opts['seeded-bugs']) : 4;
+if (!Number.isInteger(SEEDED_BUGS) || SEEDED_BUGS < 0) {
+  console.error('--seeded-bugs must be a whole number: the count the seed script reported creating');
+  process.exit(2);
+}
 
 // ---------- corpus ----------
 const readJsonl = (f) => fs.readFileSync(f, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l));
@@ -345,7 +356,17 @@ function validity(run) {
     { check: 'run replayed this corpus', ok: run.header.corpusReportsSha256 === sha256File(reportsFile), detail: `reports.jsonl sha256 in run header ${run.header.corpusReportsSha256 === sha256File(reportsFile) ? 'matches' : 'DOES NOT match'}` },
     { check: 'quarantine audit finds no breach', ok: null, detail: 'not checked by this tool: the audit of the builder transcript is separate, and its outcome must be stated in the results' },
   ];
-  if ((run.header.seededBugIds || []).length !== 4) checks.push({ check: 'four seeded bugs recorded before the replay', ok: false, detail: `${(run.header.seededBugIds || []).length} recorded` });
+  const seededRecorded = (run.header.seededBugIds || []).length;
+  if (SEEDED_BUGS_GIVEN) {
+    // Declared count: the check is always shown, pass or fail.
+    checks.push({
+      check: 'every seeded bug, and nothing else, recorded before the replay',
+      ok: seededRecorded === SEEDED_BUGS,
+      detail: `${seededRecorded} recorded, ${SEEDED_BUGS} created by the seed (--seeded-bugs)`,
+    });
+  } else if (seededRecorded !== 4) {
+    checks.push({ check: 'four seeded bugs recorded before the replay', ok: false, detail: `${seededRecorded} recorded` });
+  }
   return { checks, void: checks.some((c) => c.ok === false) };
 }
 
@@ -412,6 +433,7 @@ const strip = (p) => ({ a: p.a.id, b: p.b.id, incidentA: p.a.incident, incidentB
 const json = {
   tool: 'score.mjs', corpusReportsSha256: sha256File(reportsFile),
   runs: [run1, run2].map((r) => ({ file: path.basename(r.file), seed: r.header.seed, base: r.header.base, startedAt: r.header.startedAt, seededBugIds: r.header.seededBugIds })),
+  ...(SEEDED_BUGS_GIVEN && { seededBugsCreatedBySeed: SEEDED_BUGS }),
   validity: { run1: V1, run2: V2, void: isVoid },
   verdict, gates: gates.map((g) => ({ ...g, band: g.band === null ? null : BANDS[g.band] })),
   headline: A1.headline, headlineExclByteIdenticalDifferent: A1.headlineExclByteIdenticalDifferent, excludedByteIdenticalDifferentIncidentPairs: A1.excludedByteIdenticalDifferentIncidentPairs,

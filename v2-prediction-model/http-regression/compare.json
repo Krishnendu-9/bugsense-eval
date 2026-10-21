@@ -1,0 +1,242 @@
+{
+ "headers": [
+  {
+   "seed": 1,
+   "base": "http://127.0.0.1:8090",
+   "seeded": 7,
+   "corpusSha": "de4b8cd84e87"
+  },
+  {
+   "seed": 2,
+   "base": "http://127.0.0.1:8090",
+   "seeded": 7,
+   "corpusSha": "de4b8cd84e87"
+  }
+ ],
+ "sends": [
+  {
+   "reports": 748,
+   "controls": 10,
+   "failed": 0,
+   "controlsMerged": 10
+  },
+  {
+   "reports": 748,
+   "controls": 10,
+   "failed": 0,
+   "controlsMerged": 10
+  }
+ ],
+ "httpVsFunction": [
+  {
+   "pairs": 0,
+   "incidents": []
+  },
+  {
+   "pairs": 0,
+   "incidents": []
+  }
+ ],
+ "seed1VsSeed2AllReports": {
+  "pairs": 0,
+  "incidents": []
+ },
+ "distinctBugs": [
+  151,
+  151
+ ],
+ "distinctKeys": 151,
+ "gates": [
+  {
+   "id": "ordinary-merges",
+   "value": 0,
+   "band": "Good"
+  },
+  {
+   "id": "hard-negative-merges",
+   "value": 8,
+   "band": "Change the code"
+  },
+  {
+   "id": "headline-recall",
+   "value": 0.6889724310776943,
+   "band": "Change the code"
+  },
+  {
+   "id": "version-only-recall",
+   "value": 0.4583333333333333,
+   "band": "Change the code"
+  },
+  {
+   "id": "browser-only-recall",
+   "value": 0.807017543859649,
+   "band": "Good"
+  },
+  {
+   "id": "data-variant-pairs",
+   "value": "20 of 20 merged",
+   "band": "Good"
+  },
+  {
+   "id": "call-path-pairs",
+   "value": "6 of 6 merged",
+   "band": "Good"
+  },
+  {
+   "id": "seed-comparison",
+   "value": "identical",
+   "band": "Good"
+  }
+ ],
+ "headline": {
+  "TP": 1230,
+  "FN": 537,
+  "FP": 358,
+  "TN": 113216,
+  "precision": 0.77455919395466,
+  "recallPerPair": 0.6960950764006791,
+  "recallPerIncident": 0.6889724310776943,
+  "recallGraded": 0.6889724310776943,
+  "incidents": 57,
+  "byteIdenticalSameIncidentPairs": 170,
+  "byteIdenticalDifferentIncidentPairs": 47
+ },
+ "versionOnly": {
+  "prod": {
+   "TP": 77,
+   "FN": 91,
+   "FP": 0,
+   "TN": 0,
+   "precision": 1,
+   "recallPerPair": 0.4583333333333333,
+   "recallPerIncident": 0.4649122807017544,
+   "recallGraded": 0.4583333333333333,
+   "incidents": 57,
+   "byteIdenticalSameIncidentPairs": 26,
+   "byteIdenticalDifferentIncidentPairs": 0
+  },
+  "dev": {
+   "TP": 152,
+   "FN": 7,
+   "FP": 0,
+   "TN": 0,
+   "precision": 1,
+   "recallPerPair": 0.9559748427672956,
+   "recallPerIncident": 0.9537037037037037,
+   "recallGraded": 0.9537037037037037,
+   "incidents": 54,
+   "byteIdenticalSameIncidentPairs": 30,
+   "byteIdenticalDifferentIncidentPairs": 0
+  }
+ },
+ "browserOnly": {
+  "TP": 530,
+  "FN": 112,
+  "FP": 0,
+  "TN": 0,
+  "precision": 1,
+  "recallPerPair": 0.8255451713395638,
+  "recallPerIncident": 0.807017543859649,
+  "recallGraded": 0.807017543859649,
+  "incidents": 57,
+  "byteIdenticalSameIncidentPairs": 56,
+  "byteIdenticalDifferentIncidentPairs": 0
+ },
+ "hardNegativeMerges": [
+  "A8a/A8b",
+  "B2/B3",
+  "E1/E2",
+  "G6/G7",
+  "G19/G20",
+  "G21/G22",
+  "G24/G25",
+  "G28/G29"
+ ],
+ "ordinaryMerges": [],
+ "seededLandings": [],
+ "validity": {
+  "run1": {
+   "checks": [
+    {
+     "check": "every control merges with its original",
+     "ok": true,
+     "detail": "all 10 merged"
+    },
+    {
+     "check": "every report lands after retries",
+     "ok": true,
+     "detail": "all landed"
+    },
+    {
+     "check": "no more than 10% of planned reports missing",
+     "ok": true,
+     "detail": "30 of 778 planned missing (3.9%)"
+    },
+    {
+     "check": "run replayed this corpus",
+     "ok": true,
+     "detail": "reports.jsonl sha256 in run header matches"
+    },
+    {
+     "check": "quarantine audit finds no breach",
+     "ok": null,
+     "detail": "not checked by this tool: the audit of the builder transcript is separate, and its outcome must be stated in the results"
+    },
+    {
+     "check": "four seeded bugs recorded before the replay",
+     "ok": false,
+     "detail": "7 recorded"
+    }
+   ],
+   "void": true
+  },
+  "run2": {
+   "checks": [
+    {
+     "check": "every control merges with its original",
+     "ok": true,
+     "detail": "all 10 merged"
+    },
+    {
+     "check": "every report lands after retries",
+     "ok": true,
+     "detail": "all landed"
+    },
+    {
+     "check": "no more than 10% of planned reports missing",
+     "ok": true,
+     "detail": "30 of 778 planned missing (3.9%)"
+    },
+    {
+     "check": "run replayed this corpus",
+     "ok": true,
+     "detail": "reports.jsonl sha256 in run header matches"
+    },
+    {
+     "check": "quarantine audit finds no breach",
+     "ok": null,
+     "detail": "not checked by this tool: the audit of the builder transcript is separate, and its outcome must be stated in the results"
+    },
+    {
+     "check": "four seeded bugs recorded before the replay",
+     "ok": false,
+     "detail": "7 recorded"
+    }
+   ],
+   "void": true
+  },
+  "void": true
+ },
+ "seedComparison": {
+  "browser": {
+   "identical": true,
+   "differingPairs": 0,
+   "reportsInvolved": []
+  },
+  "node": {
+   "identical": true,
+   "differingPairs": 0,
+   "reportsInvolved": []
+  }
+ }
+}

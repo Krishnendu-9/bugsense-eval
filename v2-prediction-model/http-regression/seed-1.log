@@ -1,0 +1,11 @@
+Connected to MongoDB
+
+Seed complete:
+  Users:    3
+  Bugs:     7 (3 captured by the SDK)
+  Comments: 1
+
+Demo accounts:
+  admin@bugsense.dev    / password123  (admin)
+  dev@bugsense.dev      / password123  (developer)
+  reporter@bugsense.dev / password123  (reporter)

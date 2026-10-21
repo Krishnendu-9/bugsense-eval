@@ -12,6 +12,7 @@ implementation. They run against the v1 corpus in this repository.
 | `infofree.mjs` | The field-by-field comparison behind Appendix A: for each hard-negative pair and each cell, which payload fields differ. | No |
 | `replay-v2.mjs` | The regression check of the real implementation against prediction line (a) of section 5.2. Details below. | No |
 | `demo.mjs` | Captures what the real SDK 1.4.0 posts for one deliberate crash in Chromium, Firefox and WebKit, and the v2 key of each payload. Produced the three-engine payload table. Details below. | No |
+| `http-regression/` | The evidence for the HTTP regression table: section 7, step 3, run through the real telemetry endpoint at commit `17c71b29145a5128d378c55b0b1d457f22c96294`. Details below. | No |
 
 ## Hashes
 
@@ -152,3 +153,49 @@ fp2::Demo Shop::nullish-read price::formatPrice@/app.js::::
   depends on it.
 
 It only prints. It writes no files.
+
+## The HTTP regression check: `http-regression/`
+
+This folder holds the evidence for the HTTP regression table: the v1 corpus
+replayed through the real telemetry endpoint, as section 7, step 3 of the
+pre-registration requires. It is the full check that `replay-v2.mjs`
+approximates at function level.
+
+**How it was run** (`orchestrate.mjs`). The commit under test was
+`17c71b29145a5128d378c55b0b1d457f22c96294`, from a clean working tree. For
+seeds 1 and 2:
+
+1. A fresh database in an in-memory MongoDB, seeded with the server's own
+   seed script.
+2. The server from that commit on `127.0.0.1:8090`, with `NODE_ENV=production`.
+   No AI key, webhooks or ingest key were loaded.
+3. This repository's `replay.mjs` sends the 748 corpus reports and 10
+   controls in that seed's order.
+
+**How it was compared** (`compare.mjs`):
+- the endpoint's grouping, against the function-level v2 key on the same
+  reports;
+- the two runs, against each other;
+- both runs, scored with `score.mjs` at SHA-256
+  `08b4e12f52ec41188fe20d2558a9e821016e37e6185f972fdab7cc762d45465a`. That is
+  the scorer before the seeded-bug change of Amendment 2.
+
+**Results:**
+- Every gate equals prediction line (a) of section 5.2.
+- 0 of 279,378 report pairs disagree between the endpoint and the function,
+  in either run.
+- The two arrival orders group identically.
+- That scorer marks both runs void on one check only: "four seeded bugs"
+  against 7 recorded, which Amendment 2 addresses.
+
+| File | What it is | SHA-256 |
+|---|---|---|
+| `run-seed1.jsonl`, `run-seed2.jsonl` | the replay records | `dbc3debf11b7fb7dfa6dcaebb31f18fbb448871436ddfacc21a9d7df7ca0817d`, `1e720d0985257f0a00fa66fcdcdb62f15c41aff72ccef40b8ac5c04c23af3c18` |
+| `scored/results.json`, `scored/results.md` | `score.mjs` output for the two runs | `9580874f28eda3e114fe6fe6f83a5d0f0c2bb45172806fed1398912ca50f7e5a`, `27934ea4db13baeecec7d3f7d1255d07662379c8a0a174a9ad1b1863412a8be1` |
+| `compare.json` | the endpoint-vs-function and seed-vs-seed comparison | `e7e88a05cd3e77e2404806ce92bc25b8776e6c2a4c0ff76ad2021680eb27aa2f` |
+| `orchestrate.mjs`, `compare.mjs` | the scripts | `430be49855ae3ff644f39072989ed9a96c046f912a727c72f303951b4a9f5080`, `dda8e446148bf68ca2914bd730d55d3e1cace42c53db74a12895be79a81f173f` |
+| `seed-*.log`, `server-*.log`, `replay-*.log`, `orchestrate.log` | the logs of each step | |
+
+The scripts were run from a scratch folder, and write their output next to
+themselves. To re-run them here, they need the bugsense repository at that
+commit, at the absolute path they name.

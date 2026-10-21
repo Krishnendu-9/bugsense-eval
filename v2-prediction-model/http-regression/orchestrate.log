@@ -1,0 +1,12 @@
+[2026-10-21T06:10:04.691Z] commit under test: 17c71b29145a5128d378c55b0b1d457f22c96294 (clean working tree)
+[2026-10-21T06:10:05.241Z] in-memory MongoDB at mongodb://127.0.0.1:60464/
+[2026-10-21T06:10:05.242Z] seed 1: seeding a fresh database
+[2026-10-21T06:10:06.298Z] seed 1: starting the server on :8090
+[2026-10-21T06:10:07.910Z] seed 1: replaying the v1 corpus
+[2026-10-21T06:24:07.269Z] seed 1: replay exited 0
+[2026-10-21T06:24:07.284Z] seed 2: seeding a fresh database
+[2026-10-21T06:24:08.166Z] seed 2: starting the server on :8090
+[2026-10-21T06:24:09.223Z] seed 2: replaying the v1 corpus
+[2026-10-21T06:38:08.499Z] seed 2: replay exited 0
+[2026-10-21T06:38:09.370Z] done
+exit 0

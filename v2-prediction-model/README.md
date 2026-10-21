@@ -11,6 +11,7 @@ implementation. They run against the v1 corpus in this repository.
 | `run.mjs` | Runs one model configuration over the v1 corpus, writes a synthetic replay file, and scores it with this repository's `score.mjs`. With `{"v1":true}` it uses the real v1 function instead, which checks that the pipeline reproduces the published v1 gates. | Yes (section 5.1) |
 | `infofree.mjs` | The field-by-field comparison behind Appendix A: for each hard-negative pair and each cell, which payload fields differ. | No |
 | `replay-v2.mjs` | The regression check of the real implementation against prediction line (a) of section 5.2. Details below. | No |
+| `demo.mjs` | Captures what the real SDK 1.4.0 posts for one deliberate crash in Chromium, Firefox and WebKit, and the v2 key of each payload. Produced the three-engine payload table. Details below. | No |
 
 ## Hashes
 
@@ -21,12 +22,13 @@ SHA-256, as recorded in the pre-registration:
 137fa0da2e1dfee95d3459319ad50bf6fe4c6d2f213f6295cf3362246450862a  run.mjs
 ```
 
-`infofree.mjs` and `replay-v2.mjs` were added after the pre-registration was
-written, so their hashes are not in that document:
+`infofree.mjs`, `replay-v2.mjs` and `demo.mjs` were added after the
+pre-registration was written, so their hashes are not in that document:
 
 ```
 0d003da708bb77e5fe08a712ae6873b0145b97e417574411d94eb7de55211918  infofree.mjs
 a0c2a0a04ab15c5328e6bbc62eed3577159ea8b1b8224a7ef30d76f669c872b0  replay-v2.mjs
+f4da4fe1c6b18695096293a33993da1b2fd145dafe6313768490fbe741fb0c55  demo.mjs
 ```
 
 Do not edit the two registered files. Any change, even to a path, breaks the
@@ -42,6 +44,10 @@ The scripts contain absolute paths for the machine they were written on:
   `E:/professional/Projects/bugsense/server/utils/fingerprint.util.js`.
 - `replay-v2.mjs` imports the v2 key from that same file, and `clampString`
   from `E:/professional/Projects/bugsense/server/utils/sanitize.js`.
+- `demo.mjs` reads the SDK from
+  `E:/professional/Projects/bugsense/server/public/sdk/bugsense.js`, imports
+  the v2 key from `fingerprint.util.js` in the same repository, and imports
+  Playwright from `E:/professional/Projects/bugsense-eval/node_modules/playwright`.
 
 On another machine, run them from a copy with the paths edited, and leave the
 originals here unchanged.
@@ -103,3 +109,46 @@ the HTTP replay.
 
 It writes `scored/` next to itself (the replay file, `results.json` and
 `results.md`). That folder is ignored by git.
+
+## The three-engine payload capture: `demo.mjs`
+
+```sh
+node demo.mjs
+```
+
+**What it does:**
+
+1. Starts a local HTTP server on a free port, bound to `127.0.0.1`. The server
+   serves a one-button page at `/shop/cart?coupon=SAVE10`, the SDK at
+   `/sdk/bugsense.js` (same origin, `data-project="Demo Shop"`, no widget), and
+   a small `app.js`.
+2. In `app.js`, the button's click handler calls `formatPrice(undefined)`
+   through `renderCartLine`, so `product.price` throws a TypeError.
+3. In Playwright's Chromium, Firefox and WebKit, each in a fresh browser,
+   it loads the page, clicks the button, and waits up to 5 seconds for the
+   report.
+4. The server records the body the SDK posts to `/api/telemetry/report` and
+   forwards nothing.
+
+For each engine it prints the browser version, the payload (breadcrumbs shown
+as one line each, `browserInfo` cut to the browser name), and the v2 key that
+`buildKeyV2` gives the payload. The expected result is one identical key for
+all three:
+
+```
+fp2::Demo Shop::nullish-read price::formatPrice@/app.js::::
+```
+
+**What decides the output:**
+- **The code in the bugsense working tree when it runs.** It reads the SDK
+  and the key from there. The published table was produced from the SDK 1.4.0
+  change before that change was committed. To reproduce it exactly, check out
+  the bugsense commit that contains the change.
+- **The browser builds.** Playwright 1.64.1 installs Chromium 156.0.8078.4,
+  Firefox 157.0 and WebKit 27.2, and the script prints the versions it used.
+  Other builds may word messages or place columns differently.
+- **The port** is chosen at random on each run, so the URLs inside `errorLog`
+  differ between runs. Nothing else in the payload, and nothing in the key,
+  depends on it.
+
+It only prints. It writes no files.
